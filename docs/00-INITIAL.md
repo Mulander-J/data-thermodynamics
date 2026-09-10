@@ -32,13 +32,13 @@ dissipation, work, and steady states.
 
 The original formulation was intentionally metaphorical:
 
--   processing may correspond to **heating**;
--   consumption or diffusion may correspond to **cooling**;
--   differences in actionable value may behave like **gradients**;
--   resources may be allocated in response to those gradients;
--   systems may lose useful gradients unless they receive new inputs or
+- processing may correspond to **heating**;
+- consumption or diffusion may correspond to **cooling**;
+- differences in actionable value may behave like **gradients**;
+- resources may be allocated in response to those gradients;
+- systems may lose useful gradients unless they receive new inputs or
     adapt;
--   feedback may allow a system to recover and maintain a useful
+- feedback may allow a system to recover and maintain a useful
     operating regime.
 
 The initial metaphor was stronger than the current theory. In
@@ -51,11 +51,11 @@ value conservation as the stronger starting point.
 The purpose of this document is to preserve the productive core of the
 original intuition while explicitly separating:
 
-1.  empirical observations,
-2.  candidate theoretical propositions,
-3.  mathematical formalisms,
-4.  thermodynamic metaphors,
-5.  speculative extensions.
+1. empirical observations,
+2. candidate theoretical propositions,
+3. mathematical formalisms,
+4. thermodynamic metaphors,
+5. speculative extensions.
 
 ------------------------------------------------------------------------
 
@@ -78,16 +78,16 @@ A compact definition is:
 
 The framework asks questions such as:
 
--   What makes a datum actionable in one context but not another?
--   Can actionable value be measured as a marginal quantity?
--   What constitutes a value gradient?
--   When does a data transformation increase or decrease actionable
+- What makes a datum actionable in one context but not another?
+- Can actionable value be measured as a marginal quantity?
+- What constitutes a value gradient?
+- When does a data transformation increase or decrease actionable
     value?
--   How does value move through data-processing and decision pipelines?
--   What is lost during processing, transmission, storage, or
+- How does value move through data-processing and decision pipelines?
+- What is lost during processing, transmission, storage, or
     consumption?
--   How can feedback restore useful value gradients?
--   Under what conditions do data systems become overloaded, stagnant,
+- How can feedback restore useful value gradients?
+- Under what conditions do data systems become overloaded, stagnant,
     or unable to generate useful work?
 
 ### Current epistemic status
@@ -111,12 +111,12 @@ Observed phenomena are primary.
 
 Examples:
 
--   data has context-dependent utility;
--   data value can change over time;
--   data can contribute differently to different models or decisions;
--   processing can improve or damage downstream utility;
--   information systems can exhibit overload, stagnation, and recovery;
--   feedback can alter subsequent data-processing behavior.
+- data has context-dependent utility;
+- data value can change over time;
+- data can contribute differently to different models or decisions;
+- processing can improve or damage downstream utility;
+- information systems can exhibit overload, stagnation, and recovery;
+- feedback can alter subsequent data-processing behavior.
 
 ### Level 2 --- Operational concepts
 
@@ -124,13 +124,13 @@ Concepts must eventually be connected to measurable quantities.
 
 Examples:
 
--   actionable value $V$;
--   data temperature $\Theta_D$;
--   value gradient $\nabla \Theta_D$;
--   value loss;
--   recovery;
--   responsiveness;
--   feedback gain.
+- actionable value $V$;
+- data temperature $\Theta_D$;
+- value gradient $\nabla \Theta_D$;
+- value loss;
+- recovery;
+- responsiveness;
+- feedback gain.
 
 ### Level 3 --- Candidate propositions
 
@@ -162,23 +162,23 @@ independently justified.
 
 The framework does not assume that:
 
--   data is a physical form of heat;
--   actionable value is a conserved physical quantity;
--   every data transformation obeys a thermodynamic equation;
--   a data temperature must be a scalar intrinsic to a dataset.
+- data is a physical form of heat;
+- actionable value is a conserved physical quantity;
+- every data transformation obeys a thermodynamic equation;
+- a data temperature must be a scalar intrinsic to a dataset.
 
 Instead, the thermodynamic vocabulary is retained when it helps express
 structural properties such as:
 
--   gradients;
--   directed flows;
--   dissipation;
--   irreversibility;
--   nonequilibrium;
--   response to perturbation;
--   efficiency;
--   feedback;
--   steady operation.
+- gradients;
+- directed flows;
+- dissipation;
+- irreversibility;
+- nonequilibrium;
+- response to perturbation;
+- efficiency;
+- feedback;
+- steady operation.
 
 If another formalism explains the same phenomenon better, it should be
 preferred.
@@ -204,11 +204,11 @@ The actionable value of data is relational rather than intrinsic.
 
 Let:
 
--   $D$ be a data object;
--   $C$ be the relevant context;
--   $T$ be temporal state;
--   $A$ be the available action set;
--   $R$ be a resource constraint.
+- $D$ be a data object;
+- $C$ be the relevant context;
+- $T$ be temporal state;
+- $A$ be the available action set;
+- $R$ be a resource constraint.
 
 Then a general value function may be written as:
 
@@ -239,9 +239,7 @@ constraint.
 One candidate formulation is:
 
 $$
-\Theta_D(C,R)
-=
-\frac{\partial V(D \mid C)}{\partial R}
+\Theta_D(C,R)=\frac{\partial V(D \mid C)}{\partial R}
 $$
 
 This equation is a **candidate operational formulation**, not an established
@@ -260,20 +258,20 @@ This differs from the original definition of "value density."
 
 ### High-temperature data may exhibit
 
--   high marginal decision relevance;
--   scarcity;
--   freshness;
--   strong task specificity;
--   high opportunity cost;
--   high expected utility from timely use.
+- high marginal decision relevance;
+- scarcity;
+- freshness;
+- strong task specificity;
+- high opportunity cost;
+- high expected utility from timely use.
 
 ### Low-temperature data may exhibit
 
--   redundancy;
--   low marginal utility;
--   obsolescence;
--   widespread availability;
--   low decision sensitivity.
+- redundancy;
+- low marginal utility;
+- obsolescence;
+- widespread availability;
+- low decision sensitivity.
 
 No dataset is inherently hot or cold without specifying the context.
 
@@ -340,13 +338,13 @@ $$
 
 Processing can therefore:
 
--   increase value;
--   decrease value;
--   preserve value;
--   redistribute value;
--   reveal previously latent value;
--   destroy useful information;
--   create new data through interaction.
+- increase value;
+- decrease value;
+- preserve value;
+- redistribute value;
+- reveal previously latent value;
+- destroy useful information;
+- create new data through interaction.
 
 Consumption can also create new value through feedback.
 
@@ -361,14 +359,14 @@ The framework instead studies the measured change in actionable value.
 
 A system can generate new actionable value through:
 
--   feedback;
--   interaction;
--   aggregation;
--   model updating;
--   new observations;
--   recombination;
--   social coordination;
--   discovery.
+- feedback;
+- interaction;
+- aggregation;
+- model updating;
+- new observations;
+- recombination;
+- social coordination;
+- discovery.
 
 This is why data-value dynamics are better represented as a branching
 process than as a one-way heat-loss cycle.
@@ -383,15 +381,7 @@ defensible **value-balance framework**.
 A generic accounting identity is:
 
 $$
-V_{\mathrm{out}}
-=
-V_{\mathrm{in}}
-+
-V_{\mathrm{external}}
-+
-V_{\mathrm{interaction}}
--
-V_{\mathrm{loss}}
+V_{\mathrm{out}}=V_{\mathrm{in}}+V_{\mathrm{external}}+V_{\mathrm{interaction}}-V_{\mathrm{loss}}
 $$
 
 The terms require domain-specific operational definitions.
@@ -401,13 +391,13 @@ This does **not** assert that total value is physically conserved.
 Instead, it asks whether observed value changes can be accounted for
 through:
 
--   external inputs;
--   transformations;
--   interactions;
--   feedback;
--   losses;
--   redistribution;
--   measurement effects.
+- external inputs;
+- transformations;
+- interactions;
+- feedback;
+- losses;
+- redistribution;
+- measurement effects.
 
 The scientific question becomes:
 
@@ -427,21 +417,18 @@ more compatible with empirical data systems.
 The original concept of universal "data heat death" is replaced by a
 local and measurable hypothesis.
 
-Let the distribution of data temperatures in a system at time $t$ be
-$\Theta_D(t)$.
+Let the distribution of data temperatures in a system at time $t$ be $\Theta_D(t)$.
 
 A candidate diagnostic for gradient diversity is:
 
 $$
-G_D(t)
-=
-\operatorname{Var}[\Theta_D(t)]
+G_D(t)=\mathop{\mathrm{Var}}_{T\sim \Theta_D(t)}[T]
 $$
 
 A local value-gradient collapse may be defined provisionally as:
 
 $$
-G_D(t) \rightarrow 0
+G_D(t)\to 0 \quad \text{as } t\to\infty
 $$
 
 under conditions where meaningful differentiation in actionable value
@@ -454,13 +441,13 @@ value to support useful differentiation or directed work.
 
 Possible causes include:
 
--   excessive diffusion;
--   redundancy;
--   stale information;
--   universal access;
--   decision saturation;
--   loss of context;
--   organizational rigidity.
+- excessive diffusion;
+- redundancy;
+- stale information;
+- universal access;
+- decision saturation;
+- loss of context;
+- organizational rigidity.
 
 Open systems may avoid such collapse through new observations, new
 resources, interaction, learning, and feedback.
@@ -476,7 +463,7 @@ and continuous exchange with its environment.
 Formally:
 
 $$
-MH
+\mathrm{MH}
 \neq
 \text{equilibrium}
 $$
@@ -484,7 +471,7 @@ $$
 Instead:
 
 $$
-MH
+\mathrm{MH}
 \approx
 \text{gradient maintenance under perturbation}
 $$
@@ -525,19 +512,17 @@ $$
 
 where:
 
--   $D_t$ = current data state;
--   $\Theta_t$ = estimated data temperature;
--   $A_t$ = action;
--   $V_t$ = resulting actionable value;
--   $F_t$ = feedback;
--   $\pi_{t+1}$ = next policy.
+- $D_t$ = current data state;
+- $\Theta_t$ = estimated data temperature;
+- $A_t$ = action;
+- $V_t$ = resulting actionable value;
+- $F_t$ = feedback;
+- $\pi_{t+1}$ = next policy.
 
 A candidate policy update is:
 
 $$
-\pi_{t+1}
-=
-f(\pi_t,F_t)
+\pi_{t+1}=f(\pi_t,F_t)
 $$
 
 DTF is not equivalent to generic feedback control. Its distinctive
@@ -547,12 +532,12 @@ data-system behavior.
 
 Feedback may be:
 
--   positive;
--   negative;
--   delayed;
--   noisy;
--   regenerative;
--   adversarial.
+- positive;
+- negative;
+- delayed;
+- noisy;
+- regenerative;
+- adversarial.
 
 ### DTF and waste-heat recovery
 
@@ -561,12 +546,12 @@ recovery.
 
 Feedback may instead change:
 
--   what the system remembers;
--   what it forgets;
--   what it samples;
--   how deeply it processes;
--   when it acts;
--   how it allocates computational resources.
+- what the system remembers;
+- what it forgets;
+- what it samples;
+- how deeply it processes;
+- when it acts;
+- how it allocates computational resources.
 
 ------------------------------------------------------------------------
 
@@ -590,11 +575,11 @@ Without some form of sensing, MH cannot be operationally demonstrated.
 
 The system adjusts:
 
--   data intake;
--   processing depth;
--   output strategy;
--   resource allocation;
--   retention policy.
+- data intake;
+- processing depth;
+- output strategy;
+- resource allocation;
+- retention policy.
 
 ------------------------------------------------------------------------
 
@@ -617,12 +602,12 @@ with its environment.
 
 Possible sources include:
 
--   new observations;
--   user feedback;
--   model updating;
--   external data;
--   recombination;
--   social interaction.
+- new observations;
+- user feedback;
+- model updating;
+- external data;
+- recombination;
+- social interaction.
 
 Thus MH is inherently compatible with nonequilibrium operation.
 
@@ -636,31 +621,28 @@ responsiveness to changes in its external actionable-value environment.
 A provisional formulation is:
 
 $$
-\mathcal{E}_D
-=
-\frac{d\Theta_{\mathrm{internal}}}
-{d\Theta_{\mathrm{external}}}
+\mathcal{E}_D=\frac{d\Theta_{\mathrm{internal}}}{d\Theta_{\mathrm{external}}}
 $$
 
 This is not yet an established metric.
 
 The intended interpretation is:
 
--   $\mathcal{E}_D \rightarrow 0$: weak response to external change;
--   excessive responsiveness: internal state may simply track external
+- $\mathcal{E}_D \rightarrow 0$: weak response to external change;
+- excessive responsiveness: internal state may simply track external
     volatility;
--   an intermediate controllable regime may permit both sensitivity and
+- an intermediate controllable regime may permit both sensitivity and
     regulation.
 
 Thermal Elasticity is **one candidate property of MH, not a synonym for MH**.
 
 A mature formulation must define:
 
-1.  what counts as internal temperature;
-2.  what counts as external temperature;
-3.  the time scale of response;
-4.  the perturbation regime;
-5.  the acceptable operating range.
+1. what counts as internal temperature;
+2. what counts as external temperature;
+3. the time scale of response;
+4. the perturbation regime;
+5. the acceptable operating range.
 
 ------------------------------------------------------------------------
 
@@ -679,10 +661,10 @@ $$
 
 Possible symptoms:
 
--   excessive redundancy;
--   stale data;
--   low decision differentiation;
--   inability to generate useful work.
+- excessive redundancy;
+- stale data;
+- low decision differentiation;
+- inability to generate useful work.
 
 ------------------------------------------------------------------------
 
@@ -693,10 +675,10 @@ the system's capacity for evaluation and regulation.
 
 Possible symptoms include:
 
--   information overload;
--   decision latency;
--   unstable model outputs;
--   excessive redundant processing.
+- information overload;
+- decision latency;
+- unstable model outputs;
+- excessive redundant processing.
 
 These are candidate analogies, not thermodynamic identities.
 
@@ -709,10 +691,10 @@ resistant to new input.
 
 Possible symptoms include:
 
--   data stagnation;
--   obsolete models;
--   low exploratory behavior;
--   excessive retention of historical assumptions.
+- data stagnation;
+- obsolete models;
+- low exploratory behavior;
+- excessive retention of historical assumptions.
 
 ------------------------------------------------------------------------
 
@@ -735,10 +717,10 @@ without becoming part of the core theory.
 
 For example, the *Mindsea* topic explores:
 
--   **Forgetting Elasticity** --- the ability of a cognitive data system
+- **Forgetting Elasticity** --- the ability of a cognitive data system
     to release, downweight, or reorganize low-value information and
     subsequently recover a usable state.
--   **Data Vacuum** --- a transient state in which an existing
+- **Data Vacuum** --- a transient state in which an existing
     informational/value structure has been released or removed while a
     replacement structure has not yet formed.
 
@@ -822,11 +804,7 @@ value.
 A candidate quantity is expected value of information:
 
 $$
-VOI
-=
-\mathbb{E}[U(a \mid D)]
--
-\max_a U(a)
+\mathrm{VOI}=\mathbb{E}[U(a \mid D)]-\max_a U(a)
 $$
 
 or related marginal-utility formulations.
@@ -839,12 +817,12 @@ Such quantities may provide empirical candidates for $\Theta_D$.
 
 Complex-systems research provides models of:
 
--   emergence;
--   adaptation;
--   networks;
--   feedback;
--   self-organization;
--   nonequilibrium states.
+- emergence;
+- adaptation;
+- networks;
+- feedback;
+- self-organization;
+- nonequilibrium states.
 
 These fields may be more appropriate than literal equilibrium
 thermodynamics for several aspects of MH.
@@ -862,18 +840,18 @@ Candidate alternatives include:
   ----------------------- ----------------------- -----------------------
   Data Thermodynamics     How does actionable     gradients, flows,
                           value flow, dissipate,  dissipation
-                          and remain usable?      
+                          and remain usable?
 
   Data Chemistry          How do data structures  reactions, structure
                           combine and transform?  
 
   Data Ecology            How do data entities    relationships,
                           compete, cooperate, and ecosystems
-                          occupy niches?          
+                          occupy niches?
 
-  Data Fluid Dynamics     How do data flows move  flow fields
+Data Fluid Dynamics     How do data flows move  flow fields
                           through boundaries and  
-                          networks?               
+                          networks?
   -----------------------------------------------------------------------
 
 These are not mutually exclusive.
@@ -908,7 +886,7 @@ explicitly provisional.
                                                   quantity
 
   Value-gradient          $G_D$                   candidate diagnostic
-  diversity                                       
+  diversity
 
   Feedback signal         $F$                     domain-dependent
 
@@ -924,7 +902,7 @@ explicitly provisional.
 
   Data exergy             $E_D$                   speculative candidate
 
-  Data wavefunction       $\Psi_D$                speculative analogy
+Data wavefunction       $\Psi_D$                speculative analogy
                                                   only
   -----------------------------------------------------------------------
 
@@ -944,11 +922,7 @@ $$
 and:
 
 $$
-\eta
-=
-\frac{W_D}{Q_D}
-\leq
-1-\frac{\Theta_{\mathrm{cold}}}{\Theta_{\mathrm{hot}}}
+\eta=\frac{W_D}{Q_D}\leq1-\frac{\Theta_{\mathrm{cold}}}{\Theta_{\mathrm{hot}}}
 $$
 
 These equations should now be treated as **candidate templates**, not
@@ -957,12 +931,12 @@ established laws.
 Before such equations can enter the core theory, the following must be
 demonstrated:
 
-1.  the quantities have operational definitions;
-2.  they can be measured independently;
-3.  the balance relation survives empirical testing;
-4.  the efficiency bound follows from explicit assumptions rather than
+1. the quantities have operational definitions;
+2. they can be measured independently;
+3. the balance relation survives empirical testing;
+4. the efficiency bound follows from explicit assumptions rather than
     analogy;
-5.  alternative models perform worse or reveal less structure.
+5. alternative models perform worse or reveal less structure.
 
 Until then, these equations belong to the framework's modeling toolbox
 rather than its laws.
@@ -1010,11 +984,11 @@ effectively from perturbations than appropriate baselines?
 
 Every core proposition should have:
 
--   operational definition;
--   measurable variables;
--   baseline model;
--   predicted observation;
--   falsification condition.
+- operational definition;
+- measurable variables;
+- baseline model;
+- predicted observation;
+- falsification condition.
 
 A proposition that cannot be tested should remain philosophical or
 metaphorical rather than being presented as scientific.
@@ -1025,13 +999,13 @@ metaphorical rather than being presented as scientific.
 
 Candidate operationalizations include:
 
--   expected value of information;
--   marginal decision utility;
--   contribution to predictive performance;
--   conditional mutual information;
--   task-specific utility gain;
--   economic marginal benefit;
--   time-decay-adjusted utility.
+- expected value of information;
+- marginal decision utility;
+- contribution to predictive performance;
+- conditional mutual information;
+- task-specific utility gain;
+- economic marginal benefit;
+- time-decay-adjusted utility.
 
 Different operationalizations may produce different "temperatures."
 
@@ -1047,12 +1021,12 @@ approaches.
 
 Potential baselines include:
 
--   Shapley-style data valuation;
--   leave-one-out contribution;
--   predictive utility;
--   information-theoretic relevance;
--   economic valuation;
--   heuristic freshness or popularity scores.
+- Shapley-style data valuation;
+- leave-one-out contribution;
+- predictive utility;
+- information-theoretic relevance;
+- economic valuation;
+- heuristic freshness or popularity scores.
 
 A Data Thermodynamics metric is useful only if it provides additional
 explanatory or predictive power.
@@ -1063,12 +1037,12 @@ explanatory or predictive power.
 
 Candidate models include:
 
--   stochastic processes;
--   dynamical systems;
--   reaction-diffusion models;
--   network flow models;
--   control systems;
--   nonequilibrium models.
+- stochastic processes;
+- dynamical systems;
+- reaction-diffusion models;
+- network flow models;
+- control systems;
+- nonequilibrium models.
 
 Partial differential equations may be useful in appropriate settings,
 but they should not be assumed to be necessary.
@@ -1079,13 +1053,13 @@ but they should not be assumed to be necessary.
 
 Potential datasets include:
 
--   social-media propagation;
--   recommendation systems;
--   model training logs;
--   data marketplace transactions;
--   organizational access logs;
--   AI-agent trajectories;
--   human decision experiments.
+- social-media propagation;
+- recommendation systems;
+- model training logs;
+- data marketplace transactions;
+- organizational access logs;
+- AI-agent trajectories;
+- human decision experiments.
 
 The key requirement is repeated measurement of value under controlled
 context.
@@ -1096,12 +1070,12 @@ context.
 
 Potential interventions include:
 
--   value-aware data retention;
--   temperature-aware caching;
--   feedback-based data acquisition;
--   AI-agent resource allocation;
--   adaptive memory policies;
--   data-quality recovery loops.
+- value-aware data retention;
+- temperature-aware caching;
+- feedback-based data acquisition;
+- AI-agent resource allocation;
+- adaptive memory policies;
+- data-quality recovery loops.
 
 Engineering success is evidence of utility, not proof of the underlying
 thermodynamic metaphor.
@@ -1182,7 +1156,7 @@ can be measured.
   Knowledge systems                   regeneration, forgetting, and
                                       recovery
 
-  Human-AI systems                    feedback-driven adaptation
+Human-AI systems                    feedback-driven adaptation
   -----------------------------------------------------------------------
 
 The AI-agent domain is currently the most promising entry point because
@@ -1195,35 +1169,35 @@ naturally present.
 
 ## Foundations
 
-1.  Probability and statistics
-2.  Information theory
-3.  Decision theory
-4.  Thermodynamics and statistical mechanics
-5.  Machine learning
-6.  Data engineering
-7.  Complex systems
-8.  Economics and mechanism design
-9.  Scientific philosophy and falsifiability
+1. Probability and statistics
+2. Information theory
+3. Decision theory
+4. Thermodynamics and statistical mechanics
+5. Machine learning
+6. Data engineering
+7. Complex systems
+8. Economics and mechanism design
+9. Scientific philosophy and falsifiability
 
 ## Core research modules
 
-1.  Data Temperature Measurement
-2.  Value Gradient Dynamics
-3.  Data-Thermodynamic Feedback
-4.  Muse Homeostasis
-5.  Value Accounting
-6.  Data Lifecycle and Regeneration
-7.  Empirical Data Valuation
-8.  Comparative Metaphor Methodology
+1. Data Temperature Measurement
+2. Value Gradient Dynamics
+3. Data-Thermodynamic Feedback
+4. Muse Homeostasis
+5. Value Accounting
+6. Data Lifecycle and Regeneration
+7. Empirical Data Valuation
+8. Comparative Metaphor Methodology
 
 ## Advanced directions
 
--   nonequilibrium information systems;
--   data valuation economics;
--   adaptive AI systems;
--   cognitive data systems;
--   social information dynamics;
--   networked data ecosystems.
+- nonequilibrium information systems;
+- data valuation economics;
+- adaptive AI systems;
+- cognitive data systems;
+- social information dynamics;
+- networked data ecosystems.
 
 ------------------------------------------------------------------------
 
@@ -1250,7 +1224,7 @@ subdisciplines.
   Data Thermodynamic Engineering      systems, feedback, lifecycle,
                                       recovery
 
-  Data Thermodynamic Cognition        memory, forgetting, attention,
+Data Thermodynamic Cognition        memory, forgetting, attention,
                                       decision systems
   -----------------------------------------------------------------------
 
@@ -1263,15 +1237,15 @@ concepts become sufficiently formalized.
 
 Data Thermodynamics currently does **not** claim that:
 
-1.  data is literally heat;
-2.  semantic value is physically conserved;
-3.  data has an observer-independent scalar temperature;
-4.  all processing increases value;
-5.  consumption always decreases value;
-6.  all open systems avoid value-gradient collapse;
-7.  MH is a natural law;
-8.  Carnot efficiency directly applies to data processing;
-9.  quantum mechanics describes ordinary data semantics;
+1. data is literally heat;
+2. semantic value is physically conserved;
+3. data has an observer-independent scalar temperature;
+4. all processing increases value;
+5. consumption always decreases value;
+6. all open systems avoid value-gradient collapse;
+7. MH is a natural law;
+8. Carnot efficiency directly applies to data processing;
+9. quantum mechanics describes ordinary data semantics;
 10. AI systems possess consciousness because they process information;
 11. biological homeostasis proves MH;
 12. a metaphor becomes scientific merely because it has equations.
@@ -1285,9 +1259,7 @@ These are explicit boundaries against overextension.
 Earlier versions included a quantum-like data temperature state:
 
 $$
-|\Psi_D\rangle
-=
-\sum_i c_i|\Theta_i\rangle
+|\Psi_D\rangle=\sum_i c_i|\Theta_i\rangle
 $$
 
 This may be retained as a speculative analogy.
@@ -1297,9 +1269,9 @@ superposition.
 
 Likewise, analogies between:
 
--   cosmic expansion and data generation;
--   black holes and information boundaries;
--   cosmological heat death and data-system stagnation;
+- cosmic expansion and data generation;
+- black holes and information boundaries;
+- cosmological heat death and data-system stagnation;
 
 belong to speculative topics unless independently derived and tested.
 
@@ -1311,12 +1283,12 @@ The conceptual development of Data Thermodynamics is author-led.
 
 AI systems have been used as research and writing tools for:
 
--   expanding conceptual branches;
--   comparing formulations;
--   organizing arguments;
--   synthesizing literature;
--   identifying counterarguments;
--   drafting and revising prose.
+- expanding conceptual branches;
+- comparing formulations;
+- organizing arguments;
+- synthesizing literature;
+- identifying counterarguments;
+- drafting and revising prose.
 
 This tool-assisted process does not imply that the concepts originated
 from an AI model.
@@ -1330,20 +1302,20 @@ Scientific claims remain subject to independent verification.
 If the framework had to be reduced to its smallest defensible form, it
 would contain:
 
-1.  **Contextual Value** --- data value depends on context and task.
-2.  **Data Temperature** --- a candidate measure of marginal actionable
+1. **Contextual Value** --- data value depends on context and task.
+2. **Data Temperature** --- a candidate measure of marginal actionable
     value.
-3.  **Value Gradient** --- differences in actionable value can guide
+3. **Value Gradient** --- differences in actionable value can guide
     resource allocation.
-4.  **Transformation and Dissipation** --- data processing can increase,
+4. **Transformation and Dissipation** --- data processing can increase,
     decrease, redistribute, or regenerate value.
-5.  **Value Balance** --- changes in value should be accounted for
+5. **Value Balance** --- changes in value should be accounted for
     rather than assumed conserved.
-6.  **Local Gradient Collapse** --- useful differentiation may disappear
+6. **Local Gradient Collapse** --- useful differentiation may disappear
     under diffusion, redundancy, or stagnation.
-7.  **Muse Homeostasis** --- systems can be studied by their ability to
+7. **Muse Homeostasis** --- systems can be studied by their ability to
     sense, regulate, recover, and regenerate useful value gradients.
-8.  **Data-Thermodynamic Feedback** --- value changes can be fed back
+8. **Data-Thermodynamic Feedback** --- value changes can be fed back
     into future policy.
 
 Everything else is downstream.
@@ -1392,25 +1364,25 @@ That is the research program.
 
 ## References and Starting Points
 
--   Shannon, C. E. (1948). *A Mathematical Theory of Communication*.
+- Shannon, C. E. (1948). *A Mathematical Theory of Communication*.
     Bell System Technical Journal, 27(3), 379--423; 27(4), 623--656.
--   Landauer, R. (1961). *Irreversibility and Heat Generation in the
+- Landauer, R. (1961). *Irreversibility and Heat Generation in the
     Computing Process*. IBM Journal of Research and Development, 5(3),
     183--191.
--   Ghorbani, A., & Zou, J. (2019). *Data Shapley: Equitable Valuation
+- Ghorbani, A., & Zou, J. (2019). *Data Shapley: Equitable Valuation
     of Data for Machine Learning*. Proceedings of ICML, PMLR 97,
     2242--2251.
--   Jia, R., et al. (2019). *Towards Efficient Data Valuation Based on
+- Jia, R., et al. (2019). *Towards Efficient Data Valuation Based on
     the Shapley Value*. Proceedings of AISTATS, PMLR 89, 1167--1176.
--   Ebiele, M., Bendechache, M., & Brennan, R. (2025). *Quantitative
+- Ebiele, M., Bendechache, M., & Brennan, R. (2025). *Quantitative
     Data Valuation Methods: A Systematic Review and Taxonomy*. ACM
     Journal of Data and Information Quality, 17(2).
--   Prigogine, I. Work on dissipative structures and nonequilibrium
+- Prigogine, I. Work on dissipative structures and nonequilibrium
     thermodynamics.
--   Schrödinger, E. (1944). *What Is Life?* --- historical source for
+- Schrödinger, E. (1944). *What Is Life?* --- historical source for
     the "negative entropy" discussion, not a direct scientific
     foundation for Data Thermodynamics.
--   Information thermodynamics, stochastic thermodynamics, and
+- Information thermodynamics, stochastic thermodynamics, and
     thermodynamics of computation constitute the broader physical
     literature relevant to the framework.
 

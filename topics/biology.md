@@ -205,9 +205,9 @@ AI model iteration 可以与 evolutionary dynamics 类比，但必须区分：
 
 假设在某一明确 state space 中定义：
 
-\[
+$$
 \nabla \Theta_D
-\]
+$$
 
 则可以研究：
 
@@ -245,9 +245,9 @@ Core 中的 MH 应保持为 candidate construct：
 
 因此：
 
-\[
-MH \neq equilibrium
-\]
+$$
+\mathrm{MH}\neq\text{equilibrium}
+$$
 
 也不能定义为：
 
@@ -316,9 +316,9 @@ MH \neq equilibrium
 
 因此：
 
-\[
+$$
 H(D) \neq \Theta_D
-\]
+$$
 
 除非在具体模型中给出可验证关系。
 
@@ -368,18 +368,15 @@ H(D) \neq \Theta_D
 
 原模型：
 
-\[
+$$
 \frac{d\Theta_{\text{word}}}{dt}
 =
-
 \alpha \cdot \text{使用频率}
 -
-
 \beta \cdot \Theta_{\text{word}}
 -
-
 \gamma \cdot \text{同义词竞争}
-\]
+$$
 
 可以保留为**候选 phenomenological model**，但不能直接把使用频率当作 Θ_D。
 
@@ -459,11 +456,11 @@ H(D) \neq \Theta_D
 
 这可以研究为一种 **value transformation**：
 
-\[
+$$
 D_{\text{speech}}
 \rightarrow
 D_{\text{text}}
-\]
+$$
 
 但不能预设 transformation direction。
 
@@ -488,13 +485,12 @@ D_{\text{text}}
 
 原有：
 
-\[
+$$
 \eta_{\text{口器}}
 =
-
 \frac{W_D(\text{情感价值输出})}
 {Q_D(\text{生物能量输入})}
-\]
+$$
 
 可以作为一个假设性 efficiency model，但目前缺少足够 operationalization。
 
@@ -603,7 +599,7 @@ D_{\text{text}}
 
 可以把以下过程作为一个候选 socio-biological feedback system：
 
-**生物特性 → 数据消费行为 → 数据环境变化 → 平台反馈 → 社会压力 / 新经验 → 认知与行为变化 → 新的数据消费行为**
+候选闭环：**生物特性 → 数据消费行为 → 数据环境变化 → 平台反馈 → 社会压力 / 新经验 → 认知与行为变化 → 新的数据消费行为**
 
 ### 关键环节
 
@@ -683,7 +679,7 @@ D_{\text{text}}
 
 Biology Topic 最值得测试的研究组织关系仍然是：
 
-\[
+$$
 \boxed{
 \Theta_D
 \rightarrow
@@ -693,7 +689,7 @@ Biology Topic 最值得测试的研究组织关系仍然是：
 \rightarrow
 \mathrm{MH}
 }
-\]
+$$
 
 这里的箭头表示**研究组织关系，不表示已成立的理论因果链**。
 
@@ -749,7 +745,7 @@ Biology Topic 的真正价值在于提供一个高复杂度测试环境：
 
 完整解释，则 Θ_D 必须证明自己的增量价值。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### B2 — “MH 只是 homeostasis”
 
@@ -767,7 +763,7 @@ Biology Topic 的真正价值在于提供一个高复杂度测试环境：
 
 > 以 actionable-value gradient 为变量是否产生独立预测或干预收益。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### B3 — “DTF 只是 biological feedback”
 
@@ -775,7 +771,7 @@ Biology Topic 的真正价值在于提供一个高复杂度测试环境：
 
 必须验证：
 
-\[
+$$
 \text{action}
 \rightarrow
 \Delta V
@@ -783,11 +779,11 @@ Biology Topic 的真正价值在于提供一个高复杂度测试环境：
 \text{feedback representation}
 \rightarrow
 \text{future policy}
-\]
+$$
 
 是否比传统 feedback model 增加解释力。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### B4 — “热力学隐喻完全可以删除”
 
@@ -804,7 +800,7 @@ Biology Topic 的真正价值在于提供一个高复杂度测试环境：
 
 > **本 Topic 应降级为 interdisciplinary synthesis，而不是 Data Thermodynamics 的证据。**
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### B5 — “进化 = 升温—降温循环”
 
@@ -814,19 +810,19 @@ Evolution 有独立的 population dynamics、selection、inheritance 与 ecologi
 
 数热学只有在能够对这些过程提供额外预测时，才能使用 evolution 的 thermodynamic mapping。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### B6 — “信息熵 = 数据温度”
 
 不成立。
 
-\[
+$$
 H(D) \neq \Theta_D
-\]
+$$
 
 除非给出明确的模型与 empirical relation。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### B7 — “效率最大化 = 最优生命”
 
@@ -838,7 +834,7 @@ H(D) \neq \Theta_D
 
 > 最小耗散、最大做功只能是 context-dependent optimization objective，而不是生命的普遍终极目标。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### B8 — Topic Exit Test
 
@@ -848,4 +844,4 @@ H(D) \neq \Theta_D
 
 如果答案是否定的，则本 Topic 的正确结论不是“继续强化隐喻”，而是**主动降级理论主张**。
 
-**状态：OPEN**
+状态：**OPEN**

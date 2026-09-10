@@ -98,9 +98,7 @@ record.
 The current candidate is:
 
 $$
-\Theta_D(C,R)
-=
-\frac{\partial V(D \mid C)}{\partial R}
+\Theta_D(C,R)=\frac{\partial V(D \mid C)}{\partial R}
 $$
 
 A strong objection is that this may simply rename an existing concept such as:
@@ -176,15 +174,7 @@ Test whether the measured gradient predicts:
 The current accounting relation is:
 
 $$
-V_{\mathrm{out}}
-=
-V_{\mathrm{in}}
-+
-V_{\mathrm{external}}
-+
-V_{\mathrm{interaction}}
--
-V_{\mathrm{loss}}
+V_{\mathrm{out}}=V_{\mathrm{in}}+V_{\mathrm{external}}+V_{\mathrm{interaction}}-V_{\mathrm{loss}}
 $$
 
 The objection is straightforward:
@@ -213,9 +203,7 @@ If the model cannot do this, it should remain bookkeeping rather than a theoreti
 The candidate diagnostic is:
 
 $$
-G_D(t)
-=
-\operatorname{Var}[\Theta_D(t)]
+G_D(t)=\mathop{\mathrm{Var}}_{T\sim \Theta_D(t)}[T]
 $$
 
 The objection is that variance is only one possible measure.
@@ -347,9 +335,7 @@ Specify a regeneration rate or transition model that predicts future actionable 
 For example:
 
 $$
-\Delta V
-=
-f(\text{interaction},\text{feedback},\text{recombination},\text{new observations})
+\Delta V=f(\text{interaction},\text{feedback},\text{recombination},\text{new observations})
 $$
 
 The model must outperform a simple baseline based only on data volume or recency.
@@ -422,9 +408,7 @@ The decisive test is whether measurements remain sufficiently stable under contr
 If values are contextual, it may be invalid to simply write:
 
 $$
-V_{\mathrm{system}}
-=
-\sum_i V_i
+V_{\mathrm{system}}=\sum_i V_i
 $$
 
 Some values may be:

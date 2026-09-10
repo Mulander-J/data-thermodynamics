@@ -126,7 +126,7 @@ $$
 物理信息是否守恒，与数热学的 Value Balance：
 
 $$
-V_{out}=V_{in}+V_{external}+V_{interaction}-V_{loss}
+V_{\mathrm{out}}=V_{\mathrm{in}}+V_{\mathrm{external}}+V_{\mathrm{interaction}}-V_{\mathrm{loss}}
 $$
 
 属于不同层级的问题。
@@ -237,7 +237,7 @@ $$
 这可以形成一个更可操作的系统问题：
 
 $$
-V_{net}=V_{generated}-V_{maintenance}
+V_{\mathrm{net}}=V_{\mathrm{generated}}-V_{\mathrm{maintenance}}
 $$
 
 因此，虫洞的价值不应仅由“传输速度”衡量，而应考虑维护、可靠性和机会成本。
@@ -391,15 +391,15 @@ MH 的核心定义不是宇宙保持某个温度，也不是达到理论热机�
 
 ## Core Mapping：宇宙学作为极限尺度测试
 
-| Core                                           | 宇宙学中的候选对应                            | 当前状态      |
-| ---------------------------------------------- | ------------------------------------ | --------- |
-| C1 Contextual Value                            | 同一观测数据对不同科学问题、时间尺度与资源条件具有不同价值        | 可用于构造研究问题 |
-| C2 Data Temperature                            | 观测资源变化对特定数据 actionable value 的边际影响   | 待操作化      |
-| C3 Value Gradient                              | 不同观测目标、理论假设与数据集之间的价值差异可能影响资源配置       | 待因果检验     |
-| C4 Transformation / Dissipation / Regeneration | 观测数据的再分析、模型更新、数据失效与新观测带来的价值恢复        | 候选系统描述    |
-| C5 Value Balance                               | 观测、计算、理论与协作过程中的价值账本                  | 仅可作为记账框架  |
-| C6 Local Value-Gradient Collapse               | 某一科学任务中新增观测不再显著提高可行动价值               | 候选诊断      |
-| C7 Muse Homeostasis                            | 科研数据系统在噪声、仪器故障、理论变化与资源限制下维持可用价值梯度的能力 | 候选映射      |
+| Core | 宇宙学中的候选对应 | 当前状态 |
+| --- | --- | --- |
+| C1 Contextual Value | 同一观测数据对不同科学问题、时间尺度与资源条件具有不同价值 | 可用于构造研究问题 |
+| C2 Data Temperature | 观测资源变化对特定数据 actionable value 的边际影响 | 待操作化 |
+| C3 Value Gradient | 不同观测目标、理论假设与数据集之间的价值差异可能影响资源配置 | 待因果检验 |
+| C4 Transformation / Dissipation / Regeneration | 观测数据的再分析、模型更新、数据失效与新观测带来的价值恢复 | 候选系统描述 |
+| C5 Value Balance | 观测、计算、理论与协作过程中的价值账本 | 仅可作为记账框架 |
+| C6 Local Value-Gradient Collapse | 某一科学任务中新增观测不再显著提高可行动价值 | 候选诊断 |
+| C7 Muse Homeostasis | 科研数据系统在噪声、仪器故障、理论变化与资源限制下维持可用价值梯度的能力 | 候选映射 |
 
 ### 重要边界
 
@@ -523,7 +523,7 @@ $$
 定义任务级：
 
 $$
-G_D(t)=Var[\Theta_D(t)]
+G_D(t)=\mathop{\mathrm{Var}}[\Theta_D(t)]
 $$
 
 再与独立指标比较，例如新发现率、预测误差下降、异常识别能力或决策改善。
@@ -538,55 +538,55 @@ $$
 
 不成立。物理热平衡与数据 actionable value 是不同层级变量。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### C-S2：宇宙学中的物理温度是否可以直接作为 $\Theta_D$？
 
 不能。两者定义不同，除非建立可检验的经验映射。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### C-S3：大爆炸是否就是“数据高温初态”？
 
 目前只是隐喻。没有独立的 $\Theta_D$ 定义就不能作为理论命题。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### C-S4：物理熵是否就是数据价值损失？
 
 不是。物理熵与 C4/C5 的价值变量不能直接等同。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### C-S5：黑洞是否证明数据可以被“耗散”？
 
 不能。黑洞信息问题属于物理理论，不自动支持数据价值守恒或耗散命题。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### C-S6：DTF 是否只是 active learning / adaptive experiment design？
 
 这是本 Topic 的核心压力测试之一。若没有额外的预测、资源效率或迁移优势，应降级 DTF。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### C-S7：MH 是否只是科研系统的 resilience / homeostasis？
 
 需要建立可测边界。如果 MH 不能产生新增变量、预测或设计约束，应降级为综合设计语言。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ### C-S8：移除测试
 
 如果删除：
 
 $$
-\Theta_D,\nabla\Theta_D,DTF,MH
+\Theta_D,\nabla\Theta_D,\mathrm{DTF},\mathrm{MH}
 $$
 
 之后，宇宙学数据系统的解释、预测与资源配置能力没有实质下降，那么本 Topic **不能作为 Data Thermodynamics 独立理论价值的证据**。
 
-**状态：OPEN**
+状态：**OPEN**
 
 ---
 

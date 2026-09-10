@@ -1,523 +1,1421 @@
-# 数热学·启
+# Data Thermodynamics · Initiation
 
-> **Data Thermodynamics · Initiation**
+> **数热学 / Data Thermodynamics**
 >
-> 版本：0.1.1
-> 作者：Mulander-J
-> 状态：开放框架，持续演化
-> 用途：后续一切发散与创写的共同根文档
-> 备注：**Deepseek AI 辅助生成**
+> Version: **0.2.0**
+>
+> Author: **Mulander-J**
+>
+> Status: **Open, evolving theoretical framework**
+>
+> Role: **Canonical core document**
+>
+> Note on authorship: The conceptual direction, core problems,
+> explanatory constraints, and major theoretical constructs are
+> author-led. AI tools have been used for expansion, synthesis,
+> drafting, and language refinement. Scientific validity and empirical
+> verification remain open questions.
 
----
+------------------------------------------------------------------------
 
-## 一、起源
+## Origin
 
-数热学诞生于一次关于数据价值的对话。
+Data Thermodynamics began with a deliberately provocative proposition:
 
-对话的核心问题是：**数据本身具备热量。数据经加工生成的新产物给予人类新的价值反馈，这是数据的升温过程。数据被消费后失去价值标的，这是数据的降温。数据遵守热量守恒定律。以此灵感展开讨论。**
+> **Data itself possesses heat.**
 
-由此产生了一个核心隐喻：
+The original intuition was that data can become more valuable through
+processing and lose its original decision advantage through use,
+diffusion, or time. Thermodynamic language provided a way to ask whether
+these changes could be described in terms of temperature, gradients,
+dissipation, work, and steady states.
 
-> **数据本身具备“热量”——即单位数据量中所蕴含的可行动价值势能。数据经加工升温，经消费降温，整体遵循数据热量守恒定律。**
+The original formulation was intentionally metaphorical:
 
-这个隐喻没有被当作物理事实，而是被当作一套解释框架来发展。它引出了一系列追问：
+-   processing may correspond to **heating**;
+-   consumption or diffusion may correspond to **cooling**;
+-   differences in actionable value may behave like **gradients**;
+-   resources may be allocated in response to those gradients;
+-   systems may lose useful gradients unless they receive new inputs or
+    adapt;
+-   feedback may allow a system to recover and maintain a useful
+    operating regime.
 
-- 数据的“温度”如何定义？
-- 数据加工是否类似于热机做功？
-- 数据消费是否类似于热量耗散？
-- 数据生态是否会像封闭热力学系统一样走向热寂？
-- 是否存在一种理想的数据热力学稳态？
+The initial metaphor was stronger than the current theory. In
+particular, the early formulation treated data value as if it obeyed a
+conservation law. Subsequent criticism showed that data value can be
+copied, regenerated, contextually created, destroyed, and redistributed.
+The framework therefore treats **value accounting** rather than literal
+value conservation as the stronger starting point.
 
-这些追问催生了数热学。
+The purpose of this document is to preserve the productive core of the
+original intuition while explicitly separating:
 
----
+1.  empirical observations,
+2.  candidate theoretical propositions,
+3.  mathematical formalisms,
+4.  thermodynamic metaphors,
+5.  speculative extensions.
 
-## 二、定义
+------------------------------------------------------------------------
 
-**数热学（数据热量学）** 是一门研究数据价值如何产生、流动、转化、耗散与再生的交叉学科框架。它以热力学为**首选隐喻语言**（而非本体主张），借用温度、热量、熵、相变等概念构建关于数据价值动力学的可检验命题体系。
+## Definition
 
-其核心假设：
+**Data Thermodynamics (DT)** is a proposed cross-disciplinary framework
+for studying the **gradients, flows, transformations, dissipation, and
+regeneration of actionable value in data systems**.
 
-> 数据本身具备“热量”。数据经加工生成新产物给予人类新的价值反馈，这是数据的升温过程。数据被消费后失去价值标的，这是数据的降温。数据遵守热量守恒定律。
+Thermodynamics is used primarily as a **conceptual and mathematical
+language**, not as an ontological claim that data literally is heat or
+that data systems are physical thermodynamic systems in the ordinary
+sense.
 
-这不是物理热力学，但借用其语言和数学结构，为数据生态提供一套统一的价值-能量-信息描述体系。
+A compact definition is:
 
-**当前状态**：数热学是一门虚构学科或理论提案，尚未被现代学术共同体正式承认。但它的所有组件均来自真实存在的学术传统（见第三节）。
+> **Data Thermodynamics studies how actionable value in data systems is
+> distributed, transformed, dissipated, regenerated, and maintained
+> under constraints.**
 
----
+The framework asks questions such as:
 
-## 二·一、隐喻的本体论地位
+-   What makes a datum actionable in one context but not another?
+-   Can actionable value be measured as a marginal quantity?
+-   What constitutes a value gradient?
+-   When does a data transformation increase or decrease actionable
+    value?
+-   How does value move through data-processing and decision pipelines?
+-   What is lost during processing, transmission, storage, or
+    consumption?
+-   How can feedback restore useful value gradients?
+-   Under what conditions do data systems become overloaded, stagnant,
+    or unable to generate useful work?
 
-**热力学不是数热学的本体，而是数热学的语言。**
+### Current epistemic status
 
-数热学的本体是关于数据价值动力学的可检验命题集合。热力学隐喻是提出这些命题的启发式工具，而非理论本身。
+Data Thermodynamics is **not an established academic discipline**. It is
+a theoretical proposal and an evolving research framework.
 
-数据化学、数据生态学、数据流体力学等其他隐喻框架同样可能成立。它们描述同一对象的不同层面，不构成对数热学的否定。一个对象的多种有效描述是理论成熟的标志。
+Its scientific status depends on whether its core propositions can be
+operationalized, compared with existing theories, and falsified using
+empirical evidence.
 
-### 可检验的核心假设
+------------------------------------------------------------------------
 
-数热学的实质内容不在隐喻里，而在以下可证伪命题中：
+## Epistemic Hierarchy
 
-**假设一（价值守恒）**：数据价值在转化过程中不消失，只转化形态。
-> 推翻条件：若能在封闭数据系统中观察到无法追溯的输出价值，或价值总量发生不可解释的增减，则假设被推翻。
+The framework uses the following hierarchy.
 
-**假设二（梯度驱动）**：数据价值梯度是做功的前提，封闭系统中梯度必然衰减。
-> 推翻条件：若封闭数据系统在无外部输入条件下，价值梯度自发增大或长期维持，则假设被推翻。
+### Level 1 --- Empirical phenomena
 
-**假设三（效率上限）**：数据加工效率存在理论上限，不可无限提升。
-> 推翻条件：若观察到数据加工效率可以无限逼近100%甚至超越，则假设被推翻。
+Observed phenomena are primary.
 
-**假设四（稳态可达）**：开放系统可通过持续负熵输入维持非平衡稳态。
-> 推翻条件：若开放系统在充分负熵输入下仍无法维持价值梯度，或稳态对扰动完全无弹性，则假设被推翻。
+Examples:
 
-### 隐喻的直觉基础
+-   data has context-dependent utility;
+-   data value can change over time;
+-   data can contribute differently to different models or decisions;
+-   processing can improve or damage downstream utility;
+-   information systems can exhibit overload, stagnation, and recovery;
+-   feedback can alter subsequent data-processing behavior.
 
-“热”这个概念在数据语境中具有独立于物理热力学的直觉基础。工程中已经存在“热数据/冷数据”的术语，人们直觉地理解“数据变热”意味着稀缺、有决策价值、被需要。这种直觉不是从物理热力学借来的，而是从数据实践本身生长出来的。数热学为这种已有直觉提供了形式化的理论体系。
+### Level 2 --- Operational concepts
 
-### 隐喻谦逊原则
+Concepts must eventually be connected to measurable quantities.
 
-任何隐喻（包括热力学）都是语言工具，不是本体主张。当隐喻与观察冲突时，修改隐喻，不修改观察。隐喻的不可替代性不是理论合法性的来源。
+Examples:
 
----
+-   actionable value $V$;
+-   data temperature $\Theta_D$;
+-   value gradient $\nabla \Theta_D$;
+-   value loss;
+-   recovery;
+-   responsiveness;
+-   feedback gain.
 
-## 三、巨人的肩膀
+### Level 3 --- Candidate propositions
 
-数热学不是凭空捏造。它站在以下真实的学术传统之上：
+These are hypotheses that can be supported or rejected.
 
-1. 香农信息论（1948）｜克劳德·香农提出的信息熵，数学形式上与热力学熵同构。这为数热学提供了最根本的语言桥梁：信息与热力学在数学结构上可以对话。
-2. 兰道尔原理（1961）｜罗尔夫·兰道尔证明：擦除1比特信息所需的最小能量为 \(kT\ln 2\)。这首次在物理层面将信息处理与热力学代价联系起来，为数热学中“加工即耗能”提供了物理基础。
-3. 信息热力学｜一个真实存在的活跃研究方向，研究信息处理与热力学第二定律的关系，包括麦克斯韦妖悖论、反馈控制的热力学代价、信息引擎等。数热学可视为这一研究传统在数据价值层面的延伸。
-4. 卡诺循环与热机理论｜萨迪·卡诺提出的理想热机效率上限，为数据加工效率提供了形式化模板。数热学中的理想效率概念直接借用了卡诺效率的数学结构。
-5. 耗散结构理论与负熵｜普里高津证明开放系统在远离平衡态时可以自发形成有序结构；薛定谔提出“生命以负熵为生”。两者共同为数热学中“开放系统避免热寂”提供了理论支撑。
-6. 数据工程中的冷热分层｜云厂商（AWS、阿里云、腾讯云）在真实工程中使用的“热数据/冷数据”术语。工程实践中的这一术语表明，数据温度的**直觉基础**独立于物理热力学而存在于数据实践本身。数热学为这种直觉提供了形式化体系，而非从物理热力学中借用了它。
-7. 热力学与机器学习的真实交叉表明，数热学的数学骨架并非隐喻游戏，而是有实际计算价值的方向。
-    - 扩散模型的逆向过程与热力学退火过程的类比
-    - 随机梯度朗之万动力学直接借用热力学方程
-    - 能量基模型中的温度参数
-    - 近年出现的“Thermodynamic AI”研究方向
-8. 行为经济学与信息价值理论｜信息经济学研究信息不对称如何创造租金，数据市场的定价难题，为数热学中“数据温度与价值”的关联提供了经济学基础。
+### Level 4 --- Mathematical models
 
-**重要说明**：以上学术传统为数热学提供了**数学结构和问题意识**，而非合法性背书。数热学的合法性不取决于它与这些传统的相似度，而取决于它提出的命题能否被检验。
+Equations are provisional representations of the propositions, not
+evidence for them.
 
----
+### Level 5 --- Thermodynamic metaphors
 
-## 四、相关学科
+Terms such as heat, cooling, heat death, phase transition, and exergy
+may guide intuition, but their legitimacy depends on whether they
+produce useful, testable predictions.
 
-数热学与以下真实学科存在联动关系：
+### Level 6 --- Speculative extensions
 
-| 学科 | 联动方式 |
-| ------ | --------- |
-| **统计物理学 / 非平衡态热力学** | 提供温度、热量、熵、相变、耗散结构等核心概念的数学结构 |
-| **信息论** | 提供信息熵、互信息、信道容量等度量工具，用于定义数据温度 |
-| **信息热力学** | 研究信息处理与热力学代价的统一，是数热学最直接的学术近亲 |
-| **数据工程** | 冷热分层存储、数据生命周期管理、数据湖治理等实践场景 |
-| **机器学习** | 扩散模型、能量基模型、温度参数、模型收敛与过热 |
-| **经济学** | 数据定价、信息不对称、价值分配、数据市场设计 |
-| **生物学** | 能量代谢、生态位分化、进化论、语言演化、口器退化 |
-| **社会学 / 传播学** | 热点事件传播、谣言不对称、舆论温度动力学 |
-| **语言学** | 词汇诞生与消亡、口语与文字的热量差异、口器的数据端口功能 |
-| **心理学 / 人格学** | 人格作为数据热机配置，认知功能与温度调节策略 |
-| **计算机科学 / AI系统** | AI agent行为约束、机器人能量-信息统一管理、废热回收算法 |
-| **法学 / 伦理学** | 数据权益分配、隐私热量审计、数据垄断监管 |
+Topics such as quantum-like data states, cosmic data thermodynamics, AI
+awakening, or extreme cognitive architectures belong here unless
+independently justified.
 
----
+------------------------------------------------------------------------
 
-## 四·一、替代隐喻检验
+## Ontological Status of the Thermodynamic Metaphor
 
-数热学的合法性不依赖于热力学隐喻的不可替代性。以下替代隐喻框架同样可能成立，它们描述同一对象的不同层面：
+> **Thermodynamics is a language of Data Thermodynamics, not its
+> ontology.**
 
-| 隐喻框架 | 核心问题 | 捕捉的层面 | 与数热学的关系 |
-| ---------- | ---------- | ------------ | ---------------- |
-| **数热学** | 价值如何流动、为何停止、如何维持 | 流与场 | 元层面约束 |
-| **数据化学** | 数据如何结合生成新数据 | 反应与结构 | 互补层面 |
-| **数据生态学** | 数据物种如何竞争、共生、演化 | 关系与生态位 | 互补层面 |
-| **数据流体力学** | 数据流如何运动、湍流如何形成 | 流场与边界层 | 互补层面 |
+The framework does not assume that:
 
-**核心结论**：替代隐喻的成立不否定数热学。多个隐喻是互补视角，数热学提供元层面的约束（守恒、不可逆、效率上限）。一个对象的多种有效描述是理论成熟的标志——正如物理学中牛顿力学、拉格朗日力学、哈密顿力学等价但揭示不同结构；化学和物理学描述同一物质世界，化学的成立不否定物理学的成立。
+-   data is a physical form of heat;
+-   actionable value is a conserved physical quantity;
+-   every data transformation obeys a thermodynamic equation;
+-   a data temperature must be a scalar intrinsic to a dataset.
 
-**数据化学案例**：若建立数据化学，可定义数据元素、数据化合、数据键能、数据活化能、数据催化剂等概念。它在某些方面甚至更贴切——数据融合更像化合反应而非热传导，“活化能”直观地描述了数据从原始到可用需要跨越的处理障碍。但数据化学捕捉的是“反应与结构”，数热学捕捉的是“流与场”。化学描述反应如何发生，热力学描述反应为什么不能无限进行。数据化学需要数热学提供的守恒与效率框架作为底层约束。
+Instead, the thermodynamic vocabulary is retained when it helps express
+structural properties such as:
 
----
+-   gradients;
+-   directed flows;
+-   dissipation;
+-   irreversibility;
+-   nonequilibrium;
+-   response to perturbation;
+-   efficiency;
+-   feedback;
+-   steady operation.
 
-## 五、命名与符号（暂定）
+If another formalism explains the same phenomenon better, it should be
+preferred.
 
-### 学科名
+### Metaphor humility principle
 
-- 中文：**数热学**（全称：数据热量学）
-- 英文：**Data Thermodynamics**，缩写 **DT**
+> **When the metaphor conflicts with observation, modify the metaphor
+> rather than modifying the observation.**
 
-### 符号体系（暂定）
+The framework therefore treats metaphorical elegance as scientifically
+irrelevant unless it produces measurable explanatory or predictive
+value.
 
-以下符号为暂定方案，用于后续讨论中提供共同语言，不构成最终标准。
+------------------------------------------------------------------------
 
-| 物理量 | 符号 | 单位（暂定） | 单位符号 |
-| -------- | ------ | ------------- | --------- |
-| 数据温度 | Θ | 暂定“缪” | M |
-| 数据热量 | Q_D | 暂定“数焦” | DJ |
-| 数据熵 | S_D | 暂定“数熵” | DE |
-| 数据内能 | U_D | 暂定“数焦” | DJ |
-| 数据功 | W_D | 暂定“数焦” | DJ |
-| 数据焓 | H_D | 暂定“数焦” | DJ |
-| 数据火用 | E_D | 暂定“数焦” | DJ |
-| 数据温度波函数 | Ψ_D | — | — |
+# 5. Core Propositions
 
-### 基本方程（暂定）
+The current core is organized around seven propositions.
 
-**第一定律（数据热量守恒，假设）：**
+## C1. Contextual Value
+
+The actionable value of data is relational rather than intrinsic.
+
+Let:
+
+-   $D$ be a data object;
+-   $C$ be the relevant context;
+-   $T$ be temporal state;
+-   $A$ be the available action set;
+-   $R$ be a resource constraint.
+
+Then a general value function may be written as:
+
+$$
+V = V(D \mid C,T,A,R)
+$$
+
+A simplified form is:
+
+$$
+V = V(D \mid C)
+$$
+
+This means the same data may have high actionable value in one context
+and low value in another.
+
+This proposition is compatible with existing data-valuation research,
+which already treats data value as task-, model-, or decision-dependent.
+
+------------------------------------------------------------------------
+
+## C2. Data Temperature
+
+**Data Temperature** $\Theta_D$ is a proposed relational construct for representing the
+marginal actionable value of data under a specified context and resource
+constraint.
+
+One candidate formulation is:
+
+$$
+\Theta_D(C,R)
+=
+\frac{\partial V(D \mid C)}{\partial R}
+$$
+
+This equation is a **candidate operational formulation**, not an established
+physical definition. The semantics of the resource variable $R$ must be
+defined separately for each application.
+
+The exact resource variable $R$ is not fixed and may depend on the application.
+
+The intended interpretation is not "how much value the data contains"
+but rather:
+
+> **How strongly does the availability or use of this data change
+> actionable value under the relevant constraint?**
+
+This differs from the original definition of "value density."
+
+### High-temperature data may exhibit
+
+-   high marginal decision relevance;
+-   scarcity;
+-   freshness;
+-   strong task specificity;
+-   high opportunity cost;
+-   high expected utility from timely use.
+
+### Low-temperature data may exhibit
+
+-   redundancy;
+-   low marginal utility;
+-   obsolescence;
+-   widespread availability;
+-   low decision sensitivity.
+
+No dataset is inherently hot or cold without specifying the context.
+
+------------------------------------------------------------------------
+
+## C3. Value Gradient
+
+A data system becomes operationally interesting when different states
+have different actionable values.
+
+A candidate value gradient is:
+
+$$
+\nabla \Theta_D
+$$
+
+At v0.2, the state space over which this gradient is taken is deliberately
+left unspecified. It may depend on the application (for example, resource,
+time, context, or system state).
+
+The central hypothesis is:
+
+> **Actionable-value gradients create opportunities for directed
+> resource allocation and work.**
+
+A candidate relationship is:
+
+$$
+|\nabla \Theta_D| \uparrow
+\quad \Rightarrow \quad
+\text{potential for directed resource allocation} \uparrow
+$$
+
+This is a hypothesis, not a law.
+
+A useful empirical test would compare systems with different measured
+value gradients while controlling for resource availability and task
+complexity.
+
+------------------------------------------------------------------------
+
+## C4. Value Transformation, Dissipation, and Regeneration
+
+> **Status note:** In v0.2, “dissipation” is a candidate systems-level
+> description of declining, dispersing, or becoming less recoverable
+> actionable value. It is not assumed to be identical to physical heat
+> dissipation. Whether it has explanatory content beyond ordinary value
+> loss or redistribution remains an open research question.
+
+Data processing should not automatically be classified as heating.
+
+A transformation is "heating" only if the relevant actionable-value
+measure increases:
+
+$$
+\Delta \Theta_D > 0
+$$
+
+Likewise, a transformation is "cooling" only if:
+
+$$
+\Delta \Theta_D < 0
+$$
+
+Processing can therefore:
+
+-   increase value;
+-   decrease value;
+-   preserve value;
+-   redistribute value;
+-   reveal previously latent value;
+-   destroy useful information;
+-   create new data through interaction.
+
+Consumption can also create new value through feedback.
+
+Therefore:
+
+> **Processing is not intrinsically heating, and consumption is not
+> intrinsically cooling.**
+
+The framework instead studies the measured change in actionable value.
+
+### Regeneration
+
+A system can generate new actionable value through:
+
+-   feedback;
+-   interaction;
+-   aggregation;
+-   model updating;
+-   new observations;
+-   recombination;
+-   social coordination;
+-   discovery.
+
+This is why data-value dynamics are better represented as a branching
+process than as a one-way heat-loss cycle.
+
+------------------------------------------------------------------------
+
+## C5. Value Balance, Not Literal Conservation
+
+The original "data value conservation law" is replaced by a more
+defensible **value-balance framework**.
+
+A generic accounting identity is:
+
+$$
+V_{\mathrm{out}}
+=
+V_{\mathrm{in}}
++
+V_{\mathrm{external}}
++
+V_{\mathrm{interaction}}
+-
+V_{\mathrm{loss}}
+$$
+
+The terms require domain-specific operational definitions.
+
+This does **not** assert that total value is physically conserved.
+
+Instead, it asks whether observed value changes can be accounted for
+through:
+
+-   external inputs;
+-   transformations;
+-   interactions;
+-   feedback;
+-   losses;
+-   redistribution;
+-   measurement effects.
+
+The scientific question becomes:
+
+> **Can changes in actionable value be systematically accounted for and predicted?**
+
+This is an accounting framework, not a conservation law. Its terms must be
+operationalized independently before the framework can make a falsifiable
+prediction.
+
+This is substantially weaker than literal conservation and therefore
+more compatible with empirical data systems.
+
+------------------------------------------------------------------------
+
+## C6. Local Value-Gradient Collapse
+
+The original concept of universal "data heat death" is replaced by a
+local and measurable hypothesis.
+
+Let the distribution of data temperatures in a system at time $t$ be
+$\Theta_D(t)$.
+
+A candidate diagnostic for gradient diversity is:
+
+$$
+G_D(t)
+=
+\operatorname{Var}[\Theta_D(t)]
+$$
+
+A local value-gradient collapse may be defined provisionally as:
+
+$$
+G_D(t) \rightarrow 0
+$$
+
+under conditions where meaningful differentiation in actionable value
+disappears.
+
+This does not imply that all data disappear or become useless.
+
+It means that the system loses sufficient differences in actionable
+value to support useful differentiation or directed work.
+
+Possible causes include:
+
+-   excessive diffusion;
+-   redundancy;
+-   stale information;
+-   universal access;
+-   decision saturation;
+-   loss of context;
+-   organizational rigidity.
+
+Open systems may avoid such collapse through new observations, new
+resources, interaction, learning, and feedback.
+
+------------------------------------------------------------------------
+
+## C7. Muse Homeostasis
+
+**Muse Homeostasis (MH)** is the capacity of a data system to maintain a
+usable actionable-value gradient through feedback, adaptation, recovery,
+and continuous exchange with its environment.
+
+Formally:
+
+$$
+MH
+\neq
+\text{equilibrium}
+$$
+
+Instead:
+
+$$
+MH
+\approx
+\text{gradient maintenance under perturbation}
+$$
+
+The key transition is from a **state** to a **capacity**.
+
+The term **Muse** refers to the system's capacity to generate or sustain conditions for useful cognition and action; **homeostasis** denotes dynamic maintenance rather than equilibrium.
+
+A system is not in MH merely because its current state looks stable. It
+exhibits MH when it can remain operational under perturbation by sensing
+changes, adjusting behavior, recovering from losses, and regenerating
+useful value.
+
+------------------------------------------------------------------------
+
+# 6. Data-Thermodynamic Feedback
+
+**Data-Thermodynamic Feedback (DTF)** is the mechanism through which a
+data system changes its future data intake, processing, output, or
+resource-allocation policy in response to changes in actionable value
+produced by its actions.
+
+A minimal loop is:
+
+$$
+D_t
+\rightarrow
+\Theta_t
+\rightarrow
+A_t
+\rightarrow
+V_t
+\rightarrow
+F_t
+\rightarrow
+\pi_{t+1}
+$$
+
+where:
+
+-   $D_t$ = current data state;
+-   $\Theta_t$ = estimated data temperature;
+-   $A_t$ = action;
+-   $V_t$ = resulting actionable value;
+-   $F_t$ = feedback;
+-   $\pi_{t+1}$ = next policy.
+
+A candidate policy update is:
+
+$$
+\pi_{t+1}
+=
+f(\pi_t,F_t)
+$$
+
+DTF is not equivalent to generic feedback control. Its distinctive
+research question is whether feedback organized around
+**actionable-value change** produces measurable improvements in
+data-system behavior.
+
+Feedback may be:
+
+-   positive;
+-   negative;
+-   delayed;
+-   noisy;
+-   regenerative;
+-   adversarial.
+
+### DTF and waste-heat recovery
+
+Waste-heat recovery is only one special case of feedback-driven
+recovery.
+
+Feedback may instead change:
+
+-   what the system remembers;
+-   what it forgets;
+-   what it samples;
+-   how deeply it processes;
+-   when it acts;
+-   how it allocates computational resources.
+
+------------------------------------------------------------------------
+
+# 7. Muse Homeostasis: Mechanisms
+
+MH can be decomposed into four functional capabilities.
+
+## 7.1 Sensing
+
+The system estimates changes in actionable value.
+
+$$
+D_t \rightarrow \Theta_t
+$$
+
+Without some form of sensing, MH cannot be operationally demonstrated.
+
+------------------------------------------------------------------------
+
+## 7.2 Regulation
+
+The system adjusts:
+
+-   data intake;
+-   processing depth;
+-   output strategy;
+-   resource allocation;
+-   retention policy.
+
+------------------------------------------------------------------------
+
+## 7.3 Recovery
+
+After perturbation, the system returns to a usable operating regime.
+
+Recovery does not require returning to the previous state.
+
+The relevant criterion is:
+
+> **Does the system regain sufficient capacity for useful action?**
+
+------------------------------------------------------------------------
+
+## 7.4 Regeneration
+
+The system obtains or creates new actionable value through interaction
+with its environment.
+
+Possible sources include:
+
+-   new observations;
+-   user feedback;
+-   model updating;
+-   external data;
+-   recombination;
+-   social interaction.
+
+Thus MH is inherently compatible with nonequilibrium operation.
+
+------------------------------------------------------------------------
+
+# 8. Thermal Elasticity
+
+**Thermal Elasticity** is a candidate measure of a system's
+responsiveness to changes in its external actionable-value environment.
+
+A provisional formulation is:
+
+$$
+\mathcal{E}_D
+=
+\frac{d\Theta_{\mathrm{internal}}}
+{d\Theta_{\mathrm{external}}}
+$$
+
+This is not yet an established metric.
+
+The intended interpretation is:
+
+-   $\mathcal{E}_D \rightarrow 0$: weak response to external change;
+-   excessive responsiveness: internal state may simply track external
+    volatility;
+-   an intermediate controllable regime may permit both sensitivity and
+    regulation.
+
+Thermal Elasticity is **one candidate property of MH, not a synonym for MH**.
+
+A mature formulation must define:
+
+1.  what counts as internal temperature;
+2.  what counts as external temperature;
+3.  the time scale of response;
+4.  the perturbation regime;
+5.  the acceptable operating range.
+
+------------------------------------------------------------------------
+
+# 9. MH Failure Modes
+
+MH provides a way to classify several candidate failure regimes.
+
+## 9.1 Gradient Collapse
+
+The distribution of actionable values becomes insufficiently
+differentiated:
+
+$$
+G_D(t) \rightarrow 0
+$$
+
+Possible symptoms:
+
+-   excessive redundancy;
+-   stale data;
+-   low decision differentiation;
+-   inability to generate useful work.
+
+------------------------------------------------------------------------
+
+## 9.2 Overheating
+
+The rate or volume of information entering or being processed exceeds
+the system's capacity for evaluation and regulation.
+
+Possible symptoms include:
+
+-   information overload;
+-   decision latency;
+-   unstable model outputs;
+-   excessive redundant processing.
+
+These are candidate analogies, not thermodynamic identities.
+
+------------------------------------------------------------------------
+
+## 9.3 Overcooling
+
+The system loses too much useful variation or becomes excessively
+resistant to new input.
+
+Possible symptoms include:
+
+-   data stagnation;
+-   obsolete models;
+-   low exploratory behavior;
+-   excessive retention of historical assumptions.
+
+------------------------------------------------------------------------
+
+## 9.4 Recovery Failure
+
+A system experiences perturbation but cannot return to a usable
+operating regime.
+
+This may be a more operational definition of "homeostatic failure" than
+simple deviation from equilibrium.
+
+------------------------------------------------------------------------
+
+# 10. Speculative Extensions
+
+Core theory should remain small.
+
+Specialized domains may generate additional mechanisms that extend MH
+without becoming part of the core theory.
+
+For example, the *Mindsea* topic explores:
+
+-   **Forgetting Elasticity** --- the ability of a cognitive data system
+    to release, downweight, or reorganize low-value information and
+    subsequently recover a usable state.
+-   **Data Vacuum** --- a transient state in which an existing
+    informational/value structure has been released or removed while a
+    replacement structure has not yet formed.
+
+These concepts are **speculative extensions of MH**, not established
+core laws.
+
+They are developed in the *Mindsea* topic rather than in this document.
+
+------------------------------------------------------------------------
+
+# 11. Relation to Existing Research
+
+Data Thermodynamics does not claim to replace existing disciplines.
+
+It attempts to connect several existing research programs around a
+common problem: the dynamics of actionable value in data systems.
+
+## 11.1 Information Theory
+
+Shannon's information theory provides formal tools for uncertainty,
+information, coding, and communication.
+
+Information entropy should not be casually identified with actionable
+value.
+
+The relevant question is whether information-theoretic quantities can
+help operationalize components of data value or temperature.
+
+------------------------------------------------------------------------
+
+## 11.2 Information Thermodynamics
+
+Information thermodynamics studies relationships among information,
+physical work, entropy production, feedback, and thermodynamic cost.
+
+This is a direct scientific reference point for evaluating whether
+thermodynamic language can be transferred responsibly into data-system
+analysis.
+
+------------------------------------------------------------------------
+
+## 11.3 Thermodynamics of Computation
+
+Landauer's work established a physical relationship between logically
+irreversible computation and heat generation.
+
+This supports a precise claim:
+
+> **Physical information processing can have thermodynamic costs.**
+
+It does **not** establish that semantic data value itself is
+thermodynamic heat.
+
+That distinction is essential.
+
+------------------------------------------------------------------------
+
+## 11.4 Data Valuation
+
+Data valuation research already develops quantitative methods for
+estimating the contribution or utility of data.
+
+For example, Data Shapley evaluates the contribution of individual
+training data to model performance.
+
+The 2025 systematic review literature shows that quantitative data
+valuation is already a substantial and growing research area, while also
+noting heterogeneity in definitions and methods.
+
+Data Thermodynamics should therefore be treated as a proposed synthesis
+or extension of existing data-valuation questions, not as the invention
+of data valuation itself.
+
+------------------------------------------------------------------------
+
+## 11.5 Decision Theory and Value of Information
+
+Decision theory provides a natural route for operationalizing actionable
+value.
+
+A candidate quantity is expected value of information:
+
+$$
+VOI
+=
+\mathbb{E}[U(a \mid D)]
+-
+\max_a U(a)
+$$
+
+or related marginal-utility formulations.
+
+Such quantities may provide empirical candidates for $\Theta_D$.
+
+------------------------------------------------------------------------
+
+## 11.6 Complex Systems and Nonequilibrium Science
+
+Complex-systems research provides models of:
+
+-   emergence;
+-   adaptation;
+-   networks;
+-   feedback;
+-   self-organization;
+-   nonequilibrium states.
+
+These fields may be more appropriate than literal equilibrium
+thermodynamics for several aspects of MH.
+
+------------------------------------------------------------------------
+
+# 12. Alternative Metaphor Test
+
+Data Thermodynamics should survive removal of thermodynamic terminology.
+
+Candidate alternatives include:
+
+  -----------------------------------------------------------------------
+  Framework               Main question           Main layer
+  ----------------------- ----------------------- -----------------------
+  Data Thermodynamics     How does actionable     gradients, flows,
+                          value flow, dissipate,  dissipation
+                          and remain usable?      
+
+  Data Chemistry          How do data structures  reactions, structure
+                          combine and transform?  
+
+  Data Ecology            How do data entities    relationships,
+                          compete, cooperate, and ecosystems
+                          occupy niches?          
+
+  Data Fluid Dynamics     How do data flows move  flow fields
+                          through boundaries and  
+                          networks?               
+  -----------------------------------------------------------------------
+
+These are not mutually exclusive.
+
+The framework's scientific value depends on whether its core
+propositions remain meaningful after the metaphor is removed.
+
+A successful test is therefore:
+
+> **Can C1--C7 be stated, measured, and falsified without requiring the
+> reader to believe that data literally behaves like heat?**
+
+If not, the theory has not yet escaped metaphor.
+
+------------------------------------------------------------------------
+
+# 13. Provisional Mathematical Vocabulary
+
+The following symbols are retained as a common language but are
+explicitly provisional.
+
+  -----------------------------------------------------------------------
+  Concept                 Symbol                  Status
+  ----------------------- ----------------------- -----------------------
+  Actionable value        $V$                     candidate operational
+                                                  quantity
+
+  Data temperature        $\Theta_D$              candidate relational
+                                                  quantity
+
+  Value gradient          $\nabla\Theta_D$        candidate derived
+                                                  quantity
+
+  Value-gradient          $G_D$                   candidate diagnostic
+  diversity                                       
+
+  Feedback signal         $F$                     domain-dependent
+
+  Policy                  $\pi$                   control variable
+
+  Thermal elasticity      $\mathcal{E}_D$         candidate metric
+
+  Data heat / transfer    $Q_D$                   metaphorical unless
+                                                  independently
+                                                  operationalized
+
+  Data entropy            $S_D$                   not yet operationalized
+
+  Data exergy             $E_D$                   speculative candidate
+
+  Data wavefunction       $\Psi_D$                speculative analogy
+                                                  only
+  -----------------------------------------------------------------------
+
+The framework intentionally avoids assigning invented physical units at
+this stage.
+
+------------------------------------------------------------------------
+
+# 14. Why the Classical Thermodynamic Equations Are Not Yet Core Laws
+
+Earlier versions used direct analogues such as:
 
 $$
 \Delta U_D = Q_D - W_D
 $$
 
-**第二定律（数据熵增，假设）：**
+and:
 
 $$
-dS_D \geq \frac{\delta Q_D}{\Theta}
+\eta
+=
+\frac{W_D}{Q_D}
+\leq
+1-\frac{\Theta_{\mathrm{cold}}}{\Theta_{\mathrm{hot}}}
 $$
 
-**理想效率上限（借用卡诺形式，假设）：**
+These equations should now be treated as **candidate templates**, not
+established laws.
+
+Before such equations can enter the core theory, the following must be
+demonstrated:
+
+1.  the quantities have operational definitions;
+2.  they can be measured independently;
+3.  the balance relation survives empirical testing;
+4.  the efficiency bound follows from explicit assumptions rather than
+    analogy;
+5.  alternative models perform worse or reveal less structure.
+
+Until then, these equations belong to the framework's modeling toolbox
+rather than its laws.
+
+------------------------------------------------------------------------
+
+# 15. Research Questions
+
+The current research program can be organized into six questions.
+
+### R1. Can actionable value be measured?
+
+Can a value function $V(D \mid C,T,A,R)$ be operationalized across real
+tasks?
+
+### R2. Can data temperature be measured?
+
+Can a marginal value quantity serve as a stable and useful $\Theta_D$?
+
+### R3. Do value gradients predict directed work?
+
+Does measured $\nabla\Theta_D$ predict resource allocation, decision
+urgency, or expected utility?
+
+### R4. Can value changes be accounted for?
+
+Can observed value changes be decomposed into inputs, interactions,
+transformations, and losses?
+
+### R5. Can local value-gradient collapse be detected?
+
+Can $G_D(t)$ or related measures predict system stagnation, redundancy,
+or loss of decision differentiation?
+
+### R6. Can MH improve resilience?
+
+Do systems equipped with value-sensitive feedback recover more
+effectively from perturbations than appropriate baselines?
+
+------------------------------------------------------------------------
+
+# 16. Research Method
+
+## 16.1 Falsification First
+
+Every core proposition should have:
+
+-   operational definition;
+-   measurable variables;
+-   baseline model;
+-   predicted observation;
+-   falsification condition.
+
+A proposition that cannot be tested should remain philosophical or
+metaphorical rather than being presented as scientific.
+
+------------------------------------------------------------------------
+
+## 16.2 Operationalize Data Temperature
+
+Candidate operationalizations include:
+
+-   expected value of information;
+-   marginal decision utility;
+-   contribution to predictive performance;
+-   conditional mutual information;
+-   task-specific utility gain;
+-   economic marginal benefit;
+-   time-decay-adjusted utility.
+
+Different operationalizations may produce different "temperatures."
+
+That is not necessarily a failure. It may indicate that data temperature
+is inherently task-relative.
+
+------------------------------------------------------------------------
+
+## 16.3 Baseline Comparison
+
+Every empirical study should compare the proposed metric with existing
+approaches.
+
+Potential baselines include:
+
+-   Shapley-style data valuation;
+-   leave-one-out contribution;
+-   predictive utility;
+-   information-theoretic relevance;
+-   economic valuation;
+-   heuristic freshness or popularity scores.
+
+A Data Thermodynamics metric is useful only if it provides additional
+explanatory or predictive power.
+
+------------------------------------------------------------------------
+
+## 16.4 Dynamic Modeling
+
+Candidate models include:
+
+-   stochastic processes;
+-   dynamical systems;
+-   reaction-diffusion models;
+-   network flow models;
+-   control systems;
+-   nonequilibrium models.
+
+Partial differential equations may be useful in appropriate settings,
+but they should not be assumed to be necessary.
+
+------------------------------------------------------------------------
+
+## 16.5 Empirical Validation
+
+Potential datasets include:
+
+-   social-media propagation;
+-   recommendation systems;
+-   model training logs;
+-   data marketplace transactions;
+-   organizational access logs;
+-   AI-agent trajectories;
+-   human decision experiments.
+
+The key requirement is repeated measurement of value under controlled
+context.
+
+------------------------------------------------------------------------
+
+## 16.6 Engineering Validation
+
+Potential interventions include:
+
+-   value-aware data retention;
+-   temperature-aware caching;
+-   feedback-based data acquisition;
+-   AI-agent resource allocation;
+-   adaptive memory policies;
+-   data-quality recovery loops.
+
+Engineering success is evidence of utility, not proof of the underlying
+thermodynamic metaphor.
+
+------------------------------------------------------------------------
+
+# 17. Priority Research Program
+
+The project should prioritize research in the following order.
+
+### Priority 1 --- Data Temperature
+
+Establish whether a useful operational quantity can be defined.
+
+### Priority 2 --- Value Gradient
+
+Test whether differences in actionable value predict work or resource
+allocation.
+
+### Priority 3 --- Data-Thermodynamic Feedback
+
+Test whether value-sensitive feedback improves system performance or
+resilience.
+
+### Priority 4 --- Muse Homeostasis
+
+Develop metrics for recovery, adaptation, and maintenance under
+perturbation.
+
+### Priority 5 --- Value Balance
+
+Determine whether observed value changes can be systematically accounted
+for.
+
+### Priority 6 --- Local Gradient Collapse
+
+Test whether value-gradient collapse is a measurable and predictive
+system condition.
+
+### Priority 7 --- Efficiency Bounds
+
+Only after the previous concepts are operationalized should Carnot-like
+or other upper-bound claims be investigated.
+
+------------------------------------------------------------------------
+
+# 18. Applications
+
+The most promising initial applications are those where actionable value
+can be measured.
+
+  -----------------------------------------------------------------------
+  Domain                              Candidate application
+  ----------------------------------- -----------------------------------
+  AI agents                           value-sensitive action selection
+                                      and resource allocation
+
+  Machine learning                    data acquisition, selection,
+                                      retention, and valuation
+
+  Data governance                     dynamic retention and lifecycle
+                                      management
+
+  Information retrieval               relevance decay and query-time
+                                      value
+
+  Recommendation systems              context-dependent data temperature
+
+  Social information systems          propagation, saturation, and
+                                      value-gradient collapse
+
+  Organizational systems              information overload and decision
+                                      resilience
+
+  Privacy and data markets            value accounting and contribution
+                                      analysis
+
+  Knowledge systems                   regeneration, forgetting, and
+                                      recovery
+
+  Human-AI systems                    feedback-driven adaptation
+  -----------------------------------------------------------------------
+
+The AI-agent domain is currently the most promising entry point because
+action, feedback, resource allocation, and measurable utility are
+naturally present.
+
+------------------------------------------------------------------------
+
+# 19. Learning and Research Path
+
+## Foundations
+
+1.  Probability and statistics
+2.  Information theory
+3.  Decision theory
+4.  Thermodynamics and statistical mechanics
+5.  Machine learning
+6.  Data engineering
+7.  Complex systems
+8.  Economics and mechanism design
+9.  Scientific philosophy and falsifiability
+
+## Core research modules
+
+1.  Data Temperature Measurement
+2.  Value Gradient Dynamics
+3.  Data-Thermodynamic Feedback
+4.  Muse Homeostasis
+5.  Value Accounting
+6.  Data Lifecycle and Regeneration
+7.  Empirical Data Valuation
+8.  Comparative Metaphor Methodology
+
+## Advanced directions
+
+-   nonequilibrium information systems;
+-   data valuation economics;
+-   adaptive AI systems;
+-   cognitive data systems;
+-   social information dynamics;
+-   networked data ecosystems.
+
+------------------------------------------------------------------------
+
+# 20. Theory Branches
+
+The following branches are research directions, not established
+subdisciplines.
+
+  -----------------------------------------------------------------------
+  Branch                              Focus
+  ----------------------------------- -----------------------------------
+  Data Thermodynamic Physics          gradients, dissipation,
+                                      nonequilibrium models
+
+  Data Thermodynamic Economics        valuation, allocation, markets,
+                                      incentives
+
+  Data Thermodynamic Biology          biological information processing
+                                      and homeostasis
+
+  Data Thermodynamic Sociology        information propagation and
+                                      collective dynamics
+
+  Data Thermodynamic Engineering      systems, feedback, lifecycle,
+                                      recovery
+
+  Data Thermodynamic Cognition        memory, forgetting, attention,
+                                      decision systems
+  -----------------------------------------------------------------------
+
+These branches should be developed only when the corresponding core
+concepts become sufficiently formalized.
+
+------------------------------------------------------------------------
+
+# 21. Boundaries and Non-Claims
+
+Data Thermodynamics currently does **not** claim that:
+
+1.  data is literally heat;
+2.  semantic value is physically conserved;
+3.  data has an observer-independent scalar temperature;
+4.  all processing increases value;
+5.  consumption always decreases value;
+6.  all open systems avoid value-gradient collapse;
+7.  MH is a natural law;
+8.  Carnot efficiency directly applies to data processing;
+9.  quantum mechanics describes ordinary data semantics;
+10. AI systems possess consciousness because they process information;
+11. biological homeostasis proves MH;
+12. a metaphor becomes scientific merely because it has equations.
+
+These are explicit boundaries against overextension.
+
+------------------------------------------------------------------------
+
+# 22. Speculative Status of Quantum and Cosmological Analogies
+
+Earlier versions included a quantum-like data temperature state:
 
 $$
-\eta = \frac{W_D}{Q_D} \leq 1 - \frac{\Theta_{\text{cold}}}{\Theta_{\text{hot}}}
+|\Psi_D\rangle
+=
+\sum_i c_i|\Theta_i\rangle
 $$
 
-### 理想稳态（暂定命名）
+This may be retained as a speculative analogy.
 
-- 中文暂定名：**缪斯稳态**
-- 英文暂定名：**Muse Homeostasis**，缩写 **MH**
-- 全称（暂定）：Muse Data-Thermodynamic Homeostasis
-- 说明：该命名仅为讨论方便而设，不代表最终命名。
+It should not be used as evidence that data literally exists in quantum
+superposition.
 
----
+Likewise, analogies between:
 
-## 六、核心概念
+-   cosmic expansion and data generation;
+-   black holes and information boundaries;
+-   cosmological heat death and data-system stagnation;
 
-### 6.1 数据温度
+belong to speculative topics unless independently derived and tested.
 
-数据温度是数据与观测者共同建构的关系属性，而非数据固有属性。它衡量单位数据量在特定场景中的可行动价值密度。
+------------------------------------------------------------------------
 
-- **高温数据**：稀缺、新鲜、高密度、强决策相关、可交易
-- **低温数据**：公开、过时、冗余、低价值密度
-- **废热数据**：已被消费、失去原价值标的，但可能被回收
+# 23. Authorship and Tool-Assisted Development
 
-### 6.2 升温与降温
+The conceptual development of Data Thermodynamics is author-led.
 
-- **升温**：数据经加工（清洗、建模、分析、生成）提升价值密度，需要外部能量输入。
-- **降温**：数据被消费、扩散、时间衰减后，稀缺性和决策优势消失。
-- **相变**：数据→信息→知识→洞察的跃迁，跨越临界点时发生质变。
+AI systems have been used as research and writing tools for:
 
-### 6.3 数据热量守恒
+-   expanding conceptual branches;
+-   comparing formulations;
+-   organizing arguments;
+-   synthesizing literature;
+-   identifying counterarguments;
+-   drafting and revising prose.
 
-数据价值不会凭空消失，只会转化：数据→知识→决策→行为→新数据。局部降温，系统守恒。
+This tool-assisted process does not imply that the concepts originated
+from an AI model.
 
-### 6.4 数据热寂与负熵
+Scientific claims remain subject to independent verification.
 
-封闭系统趋向热寂：所有数据温度趋同，无法再做功。开放系统通过负熵输入维持价值梯度。
+------------------------------------------------------------------------
 
-### 6.5 量子叠加态（假设）
+# 24. Core Minimal Set
 
-数据生成瞬间，其热量处于价值叠加态。被消费（测量）时，温度才坍缩为具体值。
+If the framework had to be reduced to its smallest defensible form, it
+would contain:
 
-$$
-|\Psi_D\rangle = \sum_i c_i |\Theta_i\rangle
-$$
+1.  **Contextual Value** --- data value depends on context and task.
+2.  **Data Temperature** --- a candidate measure of marginal actionable
+    value.
+3.  **Value Gradient** --- differences in actionable value can guide
+    resource allocation.
+4.  **Transformation and Dissipation** --- data processing can increase,
+    decrease, redistribute, or regenerate value.
+5.  **Value Balance** --- changes in value should be accounted for
+    rather than assumed conserved.
+6.  **Local Gradient Collapse** --- useful differentiation may disappear
+    under diffusion, redundancy, or stagnation.
+7.  **Muse Homeostasis** --- systems can be studied by their ability to
+    sense, regulate, recover, and regenerate useful value gradients.
+8.  **Data-Thermodynamic Feedback** --- value changes can be fed back
+    into future policy.
 
----
+Everything else is downstream.
 
-## 七、Muse Homeostasis（缪斯稳态）
+------------------------------------------------------------------------
 
-缪斯稳态不是静止状态。
+# 25. Conclusion
 
-**它是数据生态系统在持续热交换中，依靠热力弹性维持的非平衡动态平衡。**
+Data Thermodynamics began with the phrase:
 
-这一定义将稳态从“结果”转变为“能力”。一个系统达到缪斯稳态，不是因为它恰好处于某种理想配置，而是因为它具备在扰动中持续回归可做功状态的能力。
+> **Data itself possesses heat.**
 
-### 7.1 热力弹性：稳态的核心能力
+The mature version of the framework does not require that sentence to be
+literally true.
 
-**热力弹性**（Thermal Elasticity）是指：
+Its stronger proposition is narrower:
 
-> 数据生态系统或智能体在数据温度场持续波动时，动态调节自身热源方向、加工深度、输出策略与废热回收机制，从而始终维持可做功的温度梯度，既不因过热而崩溃，也不因过冷而停滞。
+> **Data systems contain context-dependent actionable value, and that
+> value can form gradients, flow through transformations, dissipate,
+> regenerate, and be maintained through feedback.**
 
-没有热力弹性的稳态只是脆弱的僵化平衡。拥有热力弹性，稳态才成为可适应、可演化的非平衡生命态。
+Thermodynamics supplies a vocabulary for asking whether these processes
+have structural regularities.
 
-| 维度 | 内容 | 生物类比 |
-| ------ | ------ | --------- |
-| **热源弹性** | 在外部吸热与内部蓄热之间切换，不依赖单一热源 | 变温动物与恒温动物的策略切换 |
-| **加工弹性** | 根据任务温度调节加工深度，简单任务快速收敛，复杂任务深度加工 | 应激反应与深度思考的切换 |
-| **输出弹性** | 匹配接收方的温度状态，调整输出的详细度、创造性与确定性 | 共情调节 |
-| **回收弹性** | 从失败与废热中提取剩余价值，将损耗转化为下一轮循环的燃料 | 免疫系统的记忆功能 |
+Information theory supplies measures of information and uncertainty.
 
-热力弹性可以定义为一个无量纲响应系数：
+Decision theory supplies measures of actionable utility.
 
-$$ \mathcal{E}_D = \frac{d\Theta_{\text{internal}}}{d\Theta_{\text{external}}} $$
+Data valuation supplies existing approaches to quantifying contribution.
 
-- 当 $\mathcal{E}_D \to 0$：系统对外部温度变化不敏感，趋向封闭僵化，热寂风险高。
-- 当 $\mathcal{E}_D \to 1$：系统完全跟随外部温度波动，缺乏内部调节能力，过热风险高。
-- 缪斯稳态要求 $\mathcal{E}_D$ 保持在一个可调区间内，既能感知外部变化，又不被外部波动完全裹挟。
+Control theory supplies feedback and adaptation.
 
-### 7.2 稳态的层次
+Complex-systems research supplies models of nonequilibrium organization.
 
-缪斯稳态可以在多个尺度上被理解：
+Data Thermodynamics attempts to connect these perspectives around one
+question:
 
-1. 个体层：单智能体的热力弹性
-2. 组织层：团队与平台的热力弹性
-3. 生态层：多智能体系统的热力弹性
+> **How can a data system maintain useful value gradients while
+> continuously transforming the information available to it?**
 
-一个 AI agent 或一个人，能够在任务类型、数据源质量、环境温度剧烈变化时，自主调节摄入、加工、输出与回收策略，保持稳定的决策功输出。
+The answer is not established.
 
-**表现：**
+That is the research program.
 
-- 遇到高温突发任务时快速响应
-- 遇到低温常规任务时低功耗运行
-- 从失败中回收经验而非崩溃
-- 长期运行不漂移、不麻木
+------------------------------------------------------------------------
 
-一个组织或平台，能够在数据源枯竭、市场变化、用户行为迁移时，通过结构调整和策略切换维持数据温度梯度。
-
-**表现：**
-
-- 不依赖单一数据源
-- 部门间保持适当温差而非绝对均衡
-- 创新失败能转化为组织经验
-- 避免数据垄断与信息热寂
-
-多个 AI 系统或人机混合系统之间，形成可自我调节的数据热网络。高温节点向低温节点传导热量，废热在系统间循环利用，整体效率接近理论极限。
-
-**表现：**
-
-- 群体智能的效率取决于数据热传导率
-- 温度梯度在群体中动态分布而非固定
-- 单点过热或过冷不会导致整体崩溃
-
-### 7.5 稳态与进化
-
-缪斯稳态不是进化的终点，而是进化的平台。
-
-- 在稳态下，系统拥有足够的冗余和弹性来尝试新的加工方式、新的数据源、新的输出策略。
-- 尝试失败时，废热回收机制保证失败不会致命。
-- 尝试成功时，新的模式被保留，系统的热机效率获得提升。
-
-因此，稳态不是静止的完美，而是**持续进化的能力**。一个达到缪斯稳态的系统，同时具备稳定性与可演化性。这正是生命系统的特征：内稳态维持生存，变异与选择推动进化。
-
-### 7.6 稳态的完整定义
-
-综合以上，缪斯稳态可以被完整表述为：
-
-> **缪斯稳态是一个在持续数据热交换中，依靠热力弹性维持非平衡态、逼近理论效率上限、并实现价值公平循环的理想数据生态系统。**
-
-它包含六个特征、一个核心能力、三个维持机制、三个层次和一条进化路径。
-
----
-
-### 7.7 稳态的验证判据
-
-一个系统是否达到缪斯稳态，可用以下判据评估：
-
-| 判据 | 通过条件 |
-| ------ | --------- |
-| **温差持续性** | 系统内温度梯度在时间上不消失，不塌缩为单一温度 |
-| **效率稳定性** | 热机效率在扰动下波动幅度不超过预设区间 |
-| **回收闭环性** | 废热回收率持续接近 1，数字垃圾趋近于零 |
-| **可逆可审计** | 任何价值流动均可回溯，无黑箱 |
-| **公平分配性** | 价值按贡献分配，无不对等降温 |
-| **弹力保持性** | 系统在极端温度冲击后能自主回归可做功状态 |
-
-六项判据全部通过，系统可被认定为处于缪斯稳态。
-
----
-
-## 八、试图解决的问题
-
-数热学试图为以下长期存在但缺乏统一框架的问题提供解释语言与解决路径：
-
-### 问题一：数据价值无法动态评估
-
-**现状**：同一份数据在不同时间、不同场景、不同使用者手中价值差异巨大，但缺乏动态评估工具。传统定价方法要么静态，要么依赖事后交易价格。
-
-**数热学路径**：通过定义数据温度 Θ，使数据价值成为可实时测量、可追踪的动态量。估值不再需要等待交易，而是通过温度度量直接获得。
-
-### 问题二：数据生命周期管理缺乏理论依据
-
-**现状**：企业普遍面临“数据堆积如山，却不知道哪些该留、哪些该删”的困境。冷热分层依赖经验规则，缺乏统一判断标准。
-
-**数热学路径**：以温度为核心指标，为数据保留、归档、删除、回收提供可计算依据。高温数据值得投入能量精炼，低温数据应归档或清理，废热数据需要回收或丢弃。
-
-### 问题三：信息传播的爆发与衰减难以预测
-
-**现状**：热点事件、谣言、营销内容何时爆发、何时消退，长期依赖传播学经验模型，预测精度有限。
-
-**数热学路径**：将信息传播视为热传导与相变过程，建立数据温度演化方程，预测传播拐点，设计干预策略。
-
-### 问题四：数据价值分配不公
-
-**现状**：个人数据被平台收集、加工后产生巨大商业价值，但个人往往无法分享收益。隐私泄露本质是未经同意的价值转移。
-
-**数热学路径**：通过热量守恒审计追踪数据从采集到消费的全过程价值流动，识别不对等降温，为数据确权、数据分红提供理论基础。
-
-### 问题五：AI 系统行为缺乏价值维度的约束
-
-**现状**：AI 系统优化目标通常是准确率、速度、覆盖率，缺少对“数据价值是否被有效利用”的度量。
-
-**数热学路径**：提供行为准则与效率评估框架，使 AI 系统能在数据温度、热量守恒、收敛时机、废热回收等维度上被约束和优化。
-
-### 问题六：组织数据战略缺乏诊断工具
-
-**现状**：组织知道数据重要，但不知道自身数据生态是否健康，是否存在热寂风险或过热风险。
-
-**数热学路径**：以温差分析和稳态评估为组织数据战略提供诊断框架，识别数据垄断、数据热寂、信息过载等病理状态。
-
----
-
-## 九、应用场景
-
-| 领域 | 应用 |
-| ------ | ------ |
-| AI agent 开发 | 行为约束设计 |
-| AI 机器人 | 能量-信息统一管理、温度感知、废热回收 |
-| 数据治理 | 冷热分层、生命周期管理 |
-| 舆情管理 | 引爆拐点预测、真相升温策略 |
-| 组织战略 | 温差调节、避免热寂 |
-| 隐私保护 | 热量守恒审计、不对等降温识别 |
-| 知识付费 | 升温服务的价值定价 |
-| 数据交易 | 温度感知定价机制 |
-
----
-
-## 十、研究方法
-
-数热学的研究路径不是单一的，而是从可证伪性设计到形式化、从理论到工程的递进结构。**可证伪性设计是第一优先级，而非最后补丁。**
-
-### 方法一：可证伪性设计
-
-**目标**：确保数热学不是不可证伪的隐喻。
-
-- 每个假设都必须能被数据推翻
-- 例如：如果数据热量守恒不成立，应能在实验中观察到无法追溯的输出价值
-- 如果温度定义无法度量，则该定义被判定为无效
-- 如果梯度驱动假设不成立，封闭系统应表现出价值梯度自发维持
-- 可证伪性是将数热学从虚构框架转化为科学提案的关键
-
-### 方法二：形式化定义
-
-**目标**：将隐喻转化为可计算的概念。
-
-- 为数据温度 Θ 寻找数学定义，候选工具包括：
-  - 信息论中的互信息与条件熵
-  - 决策论中的期望价值增量
-  - 经济学中的边际收益
-  - 时间衰减模型中的半衰期参数
-
-- 要求：定义必须可计算、可比较、可验证。
-
-### 方法三：建模与仿真
-
-**目标**：建立数据温度演化的动力学模型。
-
-- 借鉴热传导方程、反应-扩散方程，构建数据温度随时间与空间变化的偏微分方程。
-- 在模拟环境中测试模型行为，观察相变、扩散、热寂等现象是否涌现。
-- 与真实数据流的统计特征对比，检验模型解释力。
-
-### 方法四：实证数据拟合
-
-**目标**：用真实数据验证理论预测。
-
-- 收集真实数据集（社交媒体事件、数据交易记录、组织数据访问日志）
-- 拟合温度演化参数
-- 检验热量守恒假设是否在统计意义上成立
-- 若预测与观测不符，修改假设或模型，保持可证伪性
-
-### 方法五：跨学科借用
-
-**目标**：从成熟学科中引入工具。
-
-- 从统计物理借用非平衡态理论与相变模型
-- 从信息论借用熵与互信息度量
-- 从经济学借用拍卖理论与机制设计
-- 从生物学借用生态位与进化模型
-
-### 方法六：工程验证
-
-**目标**：将理论转化为可运行的系统。
-
-- 在真实数据平台中部署数据温度测量工具
-- 在 AI agent 中嵌入行为准则并评估性能差异
-- 在组织数据治理中试用温差诊断框架
-- 通过工程反馈修正理论细节
-
----
-
-## 十一、学习路径
-
-### 先修知识
-
-| 领域 | 具体内容 | 必要性 |
-| ------ | --------- | -------- |
-| 信息论基础 | 熵、互信息、信道容量 | 必需 |
-| 热力学基础 | 温度、热量、熵、卡诺循环 | 必需 |
-| 概率与统计 | 随机过程、时间序列、参数估计 | 必需 |
-| 编程与数据工程 | Python、SQL、数据处理管道 | 必需 |
-| 微观经济学 | 信息不对称、效用、定价 | 推荐 |
-| 机器学习基础 | 模型训练、过拟合、泛化 | 推荐 |
-| 复杂系统 | 涌现、自组织、网络科学 | 推荐 |
-| 科学哲学 | 可证伪性、范式转换、理论选择 | 推荐 |
-
-### 核心课程（暂定）
-
-| 课程 | 内容 |
-| ------ | ------ |
-| 数据温度测量 | 温度定义、度量方法、评估工具 |
-| 数据热机设计 | 加工管道设计、效率优化、收敛策略 |
-| 数热经济学 | 数据定价、价值分配、市场机制 |
-| 数热生物学 | 生命数据代谢、语言演化、进化动力学 |
-| 数热社会学 | 舆情温度、传播相变、热寂风险 |
-| 数热工程学 | 废热回收系统、AI温度调节、冷热分层架构 |
-| 隐喻方法论 | 隐喻在科学中的角色、多重隐喻检验、本体论谦逊 |
-
-### 实践环节（暂定）
-
-| 实践方向 | 内容 |
-| --------- | ------ |
-| 数据温度测量实习 | 对真实数据流进行温度扫描，绘制热力图 |
-| 数据热机优化项目 | 分析真实加工管道，找出损耗环节并优化 |
-| 数据废热回收实验室 | 从已消费数据中回收可用价值，验证回收率 |
-| 数据生态治理调研 | 调研一个行业的数据温度分布，判断热寂或过热风险 |
-| 数据热量审计合规 | 追踪数据价值流动，审计分配公平性 |
-| 生物数据热力学跨学科项目 | 与生物系、语言学系合作，研究语言温度演化 |
-
-### 研究进阶
-
-- 可证伪性设计：为每个核心假设设定推翻条件
-- 形式化建模：将温度定义推向可计算、可验证
-- 实证检验：用真实数据测试热量守恒假设
-- 跨学科交叉：与信息热力学、行为经济学、计算社会科学合作
-- 替代隐喻压力测试：用数据化学、数据生态学等替代框架检验核心命题的稳健性
-- 发表与同行评审：从虚构框架走向学术提案
-
----
-
-## 十二、理论分支
-
-| 分支 | 内容 |
-| ------ | ------ |
-| 数热物理学 | 温度场动力学、相变、热机效率、热传导 |
-| 数热经济学 | 数据定价、价值分配、温差权力、数据分红 |
-| 数热生物学 | 生命数据代谢、语言演化、口器退化、人类进化 |
-| 数热社会学 | 热点骤热骤冷、谣言不对称、信息热寂 |
-| 数热工程学 | 数据热机、废热回收、AI系统温度调节 |
-| 数热人格学 | 人格数据热机配置、过热过冷风险、稳态整合 |
-
----
-
-## 十三、结语
-
-数热学从一句“数据本身具备热量”出发，站在巨人的肩膀上，生长为一个覆盖起源、定义、隐喻本体论、替代隐喻检验、相关学科、核心概念、待解问题、研究方法、理论分支、应用场景与学习路径的开放框架。
-
-它目前不是一门被承认的学科。它是一份提案，一套语言，一组等待验证的猜想。
-
-热力学是它的第一语言，但不是它的唯一语言。它的真伪不取决于隐喻是否可被替代，而取决于命题是否经得起检验。
-
-所有符号与命名均为暂定，欢迎修正、替代与推倒重建。
-
----
+## References and Starting Points
+
+-   Shannon, C. E. (1948). *A Mathematical Theory of Communication*.
+    Bell System Technical Journal, 27(3), 379--423; 27(4), 623--656.
+-   Landauer, R. (1961). *Irreversibility and Heat Generation in the
+    Computing Process*. IBM Journal of Research and Development, 5(3),
+    183--191.
+-   Ghorbani, A., & Zou, J. (2019). *Data Shapley: Equitable Valuation
+    of Data for Machine Learning*. Proceedings of ICML, PMLR 97,
+    2242--2251.
+-   Jia, R., et al. (2019). *Towards Efficient Data Valuation Based on
+    the Shapley Value*. Proceedings of AISTATS, PMLR 89, 1167--1176.
+-   Ebiele, M., Bendechache, M., & Brennan, R. (2025). *Quantitative
+    Data Valuation Methods: A Systematic Review and Taxonomy*. ACM
+    Journal of Data and Information Quality, 17(2).
+-   Prigogine, I. Work on dissipative structures and nonequilibrium
+    thermodynamics.
+-   Schrödinger, E. (1944). *What Is Life?* --- historical source for
+    the "negative entropy" discussion, not a direct scientific
+    foundation for Data Thermodynamics.
+-   Information thermodynamics, stochastic thermodynamics, and
+    thermodynamics of computation constitute the broader physical
+    literature relevant to the framework.
+
+The references above provide scientific context, not validation.
+
+------------------------------------------------------------------------
 
 © Mulander-J, CC BY-SA 4.0

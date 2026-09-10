@@ -1,243 +1,693 @@
-# 反数热学：对数据热量学核心假设的批判与替代猜想
+# Data Thermodynamics · Anti-Framework
 
-> **Anti-Data Thermodynamics**
-> 性质：派生文档 · 批判性专题
+**数热学 / Data Thermodynamics**
 
----
+- **Version:** 0.2.0
+- **Role:** Adversarial review and self-correction document
+- **Status:** Open, evolving
+- **Relation to `00-INITIAL.md`:** Critical mirror of the current core
 
-## 一、立场声明
-
-数热学是一个开放框架。它的生命力不取决于被所有人接受，而取决于能否经得起对立论证的检验。本文档系统性地提出与数热学核心假设相悖的论点与猜想，作为反方镜像。
-
-这些论证不是否定数热学，而是为它划定边界。
-
----
-
-## 二、对立的核心假设
-
-数热学建立在以下假设之上：
-
-1. 数据具备“热量”，即单位数据量中蕴含的可行动价值势能。
-2. 数据经加工升温，经消费降温。
-3. 数据遵守热量守恒定律。
-4. 数据系统存在热寂风险，需要通过开放负熵维持温差。
-5. 存在理想的缪斯稳态。
-6. 热力学隐喻是数热学的恰当语言载体。
-
-本文档逐一提出对立论证。
+> The purpose of this document is not to prove Data Thermodynamics correct.
+> It is to identify the strongest objections that could force the framework to change.
 
 ---
 
-## 三、对立论证一：数据价值不守恒，可以凭空产生与消失
+## 1. Purpose
 
-### 论证
+The anti-framework is an adversarial stress test of the current Data Thermodynamics core.
 
-热力学第一定律要求能量守恒。但数据价值是否守恒？反方认为：**不守恒。**
+The original `01-ANTI.md` challenged an early formulation built around:
 
-数据具有非竞争性。一份数据被一个人使用后，不减损其价值，另一个人使用也不减损。甚至，同一份数据被越多人使用，其价值可能越高——网络效应。
+- literal data-value conservation;
+- intrinsic scalar data temperature;
+- processing as heating;
+- consumption as cooling;
+- global data heat death;
+- equilibrium-like Muse Homeostasis;
+- thermodynamic identity between data and heat.
 
-- 一份开源代码，被一万个开发者使用，价值远大于被一个人使用。
-- 一条模因被转发百万次，其文化价值不降反升。
-- 一个数据集被多个团队训练，每个团队都能从中提取价值，而原始数据并未降温。
+Several of those objections have already changed the core theory.
 
-这与热量的传递完全不同：热量传导后，高温物体降温，低温物体升温，总热量守恒。数据被复制、分享、使用后，总价值可能增加，也可能减少，但不存在类似“总热量恒定”的约束。
+The revised anti-framework therefore distinguishes between:
 
-### 替代猜想
-
-**数据价值是网络涌现属性，而非守恒量。**
-
-价值取决于连接数和场景，而非某种内在的“热量”。数据可以因为更多人使用而增值，也可能因为过时而被抛弃。不存在热力学意义上的数据热量守恒。
-
----
-
-## 四、对立论证二：数据温度不可度量，因为价值完全主观
-
-### 论证
-
-数热学假设数据温度可以被定义和度量。反方认为：**做不到。**
-
-- 同一份数据，对A公司是高温资产，对B公司是低温噪声。
-- 同一个用户在早餐时看到一条新闻，和晚上睡前看到同一条新闻，价值完全不同。
-- 温度如果无法唯一确定，就只能是一个主观赋值，而非客观物理量。
-
-数热学试图借用热力学的客观温度概念，但数据价值本质上是关系性的、情境性的、主观的。不存在一个与观测者无关的“数据温度计”。
-
-### 替代猜想
-
-**数据价值是不可通约的关系属性，任何温度度量都只是局部投影。**
-
-不存在单一标量能够完整刻画数据的价值势能，最多只能给出一个依赖于特定观测框架的伪温度。
+1. objections already incorporated into the theory;
+2. objections that remain unresolved;
+3. empirical tests that could force further revision.
 
 ---
 
-## 五、对立论证三：加工不一定升温，有时加工会破坏价值
+## 2. Self-Correction: Objections Already Incorporated
 
-### 论证
+The following objections from the earlier anti-framework remain part of the historical record. Their original forms have been incorporated, reformulated, or absorbed into the revised core; their residual questions remain active where indicated.
 
-数热学假设数据经加工提升温度。反方指出：**加工可能降温。**
+| Earlier objection | Current response |
+| --- | --- |
+| Data value is not literally conserved | Replace conservation with value balance/accounting |
+| Data temperature is context-dependent | Define temperature relationally and task-dependently |
+| Processing can destroy value | Heating is defined by measured value change, not by processing itself |
+| Consumption can regenerate value | Add regeneration and data-thermodynamic feedback |
+| Global heat death may not occur | Replace it with local value-gradient collapse |
+| MH may not be an equilibrium state | Define MH as adaptive capacity under perturbation |
 
-- 过度清洗可能删除异常值，而这些异常值恰恰是最有价值的信号。
-- 过度建模导致过拟合，模型在新场景下表现更差。
-- 将丰富的原始数据压缩为结构化表格，可能丢失不可编码的隐性信息。
+This is an important methodological commitment:
 
-加工是一种选择性的信息破坏。它有时提取价值，有时摧毁价值。升温只是可能性之一，而非必然结果。
+> **An objection that survives should be allowed to modify the theory.**
 
-### 替代猜想
+The anti-framework therefore has permission to produce revision rather than merely rebuttal.
 
-**数据加工是一个有损筛选过程，其净效应可正可负。**
+## 2.1 Persistent Historical Objection Registry
 
-没有先验理由认为加工必然提高数据价值密度。某些情况下，原始数据比加工后的产品温度更高。
+The objections below are persistent records. They should not be deleted merely
+because the core theory changes. A theory revision changes the **status** of
+an objection and records the residual question it leaves behind.
 
----
+### Status vocabulary
 
-## 六、对立论证四：消费不一定降温，反而可能加热
+- **OPEN** — the objection remains materially unresolved.
+- **PARTIALLY RESOLVED** — the revision addresses part of the objection, but a
+  substantive problem remains.
+- **ABSORBED** — the objection forced a change in the theory and is no longer
+  an objection to the revised formulation in its original form.
+- **REFORMULATED** — the original objection was converted into a more precise
+  theoretical question.
+- **CLOSED** — reserved for cases where sufficient logical or empirical work
+  makes the objection no longer materially threatening. `CLOSED` does not
+  mean the entire theory is proven.
 
-### 论证
+| ID | Original objection | First raised | Current response | Current status | Residual question |
+| --- | --- | --- | --- | --- | --- |
+| A-H01 | Data value is not literally conserved | v0.1 | Replaced strict conservation with value balance/accounting | ABSORBED / OPEN | Is value balance independently measurable and predictive? |
+| A-H02 | Data temperature is not measurable as an intrinsic scalar | v0.1 | Reframed temperature as relational and task-dependent | PARTIALLY RESOLVED / OPEN | Does the construct outperform existing value measures? |
+| A-H03 | Processing can destroy rather than increase value | v0.1 | Heating is no longer equated with processing; value change is empirical | ABSORBED | Can transformation direction be predicted? |
+| A-H04 | Consumption can create new value | v0.1 | Added regeneration and data-thermodynamic feedback | ABSORBED / OPEN | Can regeneration be quantified independently? |
+| A-H05 | Global data heat death may not exist | v0.1 | Replaced global heat death with local value-gradient collapse | ABSORBED / OPEN | Which operational collapse metrics are valid? |
+| A-H06 | Muse Homeostasis may be unreachable as an equilibrium | v0.1 | Recast MH as adaptive maintenance capacity | REFORMULATED / OPEN | Is MH distinct from control/adaptation theory? |
+| A-H07 | Data is not physical heat | v0.1 | Explicit non-ontology boundary | OPEN | Does the thermodynamic framing add constraints without physical identity? |
+| A-H08 | Thermodynamic metaphor may be replaceable by other metaphors | v0.1 | Added a metaphor-substitutability test | OPEN | Does thermodynamic vocabulary generate unique explanatory or engineering utility? |
 
-数热学认为消费导致降温。反方指出：**消费可能升温。**
-
-- 用户点击一个推荐结果，这个行为本身产生了新的高温数据，用于改进推荐模型。
-- 一个开源项目被广泛使用，反馈和贡献使项目更完善，价值上升。
-- 一篇文章被大量阅读和批评，作者声誉提升，原文价值反而更高。
-
-消费不是终点，而是新数据生产的起点。被消费的数据可能因此获得新的用途、新的解释、新的场景。
-
-### 替代猜想
-
-**数据消费是价值再生的触发器，而非终点。**
-
-数据生命周期不是“升温—做功—降温”的单向循环，而是不断分叉、增值、再组合的网络演化。
-
----
-
-## 七、对立论证五：数据热寂不存在，因为数据持续被创造
-
-### 论证
-
-数热学警告封闭系统会走向热寂。反方认为：**数据系统永远不会封闭。**
-
-- 人类行为持续产生新数据，没有停止的迹象。
-- 传感器、物联网、生成式AI不断制造新的数据流。
-- 即使旧数据温度趋同，新数据总是带着新的温差出现。
-
-数据热寂需要系统完全孤立且不再产生新数据，这在现实中几乎不可能。对热寂的担忧可能是对封闭系统假设的过度依赖。
-
-### 替代猜想
-
-**数据生态的本质是无限开放的，不存在全局热寂。**
-
-热寂只适用于被人为封闭的子系统，而非数据生态本身。
+**Historical rule:** when a future Initial revision responds to one of these
+objections, update its status and residual question rather than deleting the
+record.
 
 ---
 
-## 八、对立论证六：缪斯稳态是一个不可达的理想，没有操作意义
+## 3. The Strongest Remaining Objections
 
-### 论证
+## A1. Is Data Temperature Necessary?
 
-缪斯稳态定义为效率接近理论极限、废热完全回收、公平透明的理想状态。反方认为：**这不可能实现，也不应追求。**
+The current candidate is:
 
-- 效率极限要求完全可逆，但数据加工本质上不可逆。
-- 废热完全回收意味着零损耗，违背信息处理的物理极限。
-- 公平透明的价值分配在利益冲突的现实系统中缺乏可执行性。
+$$
+\Theta_D(C,R)
+=
+\frac{\partial V(D \mid C)}{\partial R}
+$$
 
-缪斯稳态更像一个宗教性的终极理想，而非可工程化的目标。
+A strong objection is that this may simply rename an existing concept such as:
 
-### 替代猜想
+- marginal utility;
+- value of information;
+- expected decision benefit;
+- data contribution;
+- economic marginal value.
 
-**数据生态的目标不是稳态，而是持续演化与适应性。**
+If existing measures already explain the relevant phenomena, Data Temperature may add terminology without explanatory power.
 
-系统不需要逼近某个理想状态，只需要在变化中生存和进化。稳态概念可能误导实践者追求僵化的优化，而忽视适应性的价值。
+### Decisive test
 
----
+Compare $\Theta_D$ with established value measures on the same tasks.
 
-## 九、对立论证七：数据不是热，热力学隐喻遮蔽了数据的独特性质
+The framework gains scientific value only if the proposed temperature formulation provides at least one of:
 
-### 论证
+- additional predictive power;
+- a useful invariant;
+- a transferable system-level abstraction;
+- a measurable constraint;
+- a better engineering intervention.
 
-最根本的对立立场是：**数据与热本质不同，借热力学语言解释数据，可能扭曲对数据的理解。**
+If it provides none, the temperature concept should be weakened or removed.
 
-- 热是物理量，具有守恒律、方向性和可测量性。
-- 数据是抽象的、可复制的、语义性的，不具备这些物理属性。
-- 隐喻可能带来启发，但将隐喻当作理论框架，有滑向伪科学的风险。
-
-### 替代猜想
-
-**数据需要自己的原生理论，而不是从物理学借来的隐喻。**
-
-信息论、复杂性科学、经济学和计算机科学已经提供了大量工具。数热学可能只是将这些工具重新命名，而未增加真正的解释力。
-
----
-
-## 十、对立论证八：隐喻可替换性证明数热学缺乏独特本体
-
-### 论证
-
-数热学以热力学为首选隐喻语言。但反方指出：**这个隐喻可以被轻易替换。**
-
-如果数据化学、数据生态学、数据流体力学都可以成立，而且各自捕捉数据价值的不同层面，那么热力学隐喻就不具备独特性。一个可以被任意替换的隐喻，说明它没有触及数据价值动力学的本质结构，只是众多可能的叙事之一。
-
-- 数据化学用“化合反应”描述数据融合，用“活化能”描述加工门槛——在某些场景下比热力学更贴切。
-- 数据生态学用“物种竞争”描述数据源之间的替代关系，用“生态位”描述数据的场景适配——捕捉了热力学完全忽略的维度。
-- 数据流体力学用“湍流”描述信息传播中的非线性爆发，用“层流”描述稳定的数据管道——在传播动力学上比热传导方程更精确。
-
-当多个隐喻各自在不同层面“更贴切”时，热力学隐喻就不再具有作为核心框架的资格。它只是众多可选语言之一，而非承载理论本体的唯一语言。
-
-### 替代猜想
-
-**数热学没有独特本体，它只是数据价值动力学的一种叙事风格。**
-
-如果数热学真的捕捉到了数据价值生态中某种本质结构，这种结构应该独立于隐喻而存在，并且无法被其他隐喻等价替代。但事实是，替代隐喻不仅存在，而且在特定场景下表现更好。这说明数热学的“本质”可能只是隐喻本身的修辞效果，而非数据价值生态的真实结构。
+**Current status:** unresolved.
 
 ---
 
-## 十一、总结
+## A2. Does a Value Gradient Actually Drive Work?
 
-| 数热学假设 | 对立论证 |
-| ----------- | --------- |
-| 数据热量守恒 | 数据价值可凭空产生或消失，非竞争性导致不守恒 |
-| 数据温度可度量 | 价值完全主观，无客观温度 |
-| 加工升温 | 加工可能破坏价值，导致降温 |
-| 消费降温 | 消费可能触发新数据生产，反而升温 |
-| 热寂风险 | 数据系统永远开放，不会热寂 |
-| 缪斯稳态可达 | 稳态不可达且无操作意义 |
-| 热力学隐喻有效 | 隐喻可能扭曲数据本质，需要原生理论 |
-| 热力学隐喻恰当 | 隐喻可被任意替换，数热学缺乏独特本体 |
+The current hypothesis is:
+
+$$
+|\nabla \Theta_D|
+\uparrow
+\quad \Rightarrow \quad
+\text{potential for directed resource allocation}
+\uparrow
+$$
+
+But resource allocation may instead be determined by:
+
+- incentives;
+- institutional power;
+- habit;
+- social norms;
+- access constraints;
+- computational architecture;
+- random exploration.
+
+A correlation between value difference and resource allocation would not establish causality.
+
+### Decisive test
+
+Construct controlled environments in which actionable-value gradients vary while other major allocation variables are held constant.
+
+Test whether the measured gradient predicts:
+
+- urgency;
+- allocation;
+- action selection;
+- computational effort;
+- economic willingness to pay.
+
+**Current status:** central but unverified.
 
 ---
 
-## 十二、数热学对反方论证的初步回应
+## A3. Is Value Balance Falsifiable?
 
-为了保持平衡，数热学可以作出以下回应：
+The current accounting relation is:
 
-1. **守恒不是指数值不变，而是指价值路径可追踪**——即使网络效应使价值增加，增加的部分也有来源。
-2. **温度是关系属性**，数热学已在定义中承认观测者依赖性，温度不是客观固有量。
-3. **加工是否升温取决于加工质量**，数热学明确认为低效加工产生废热而非升温。
-4. **消费降温与消费后新数据生产不矛盾**，数热学将其描述为废热回收。
-5. **热寂是封闭系统的趋势**，数热学强调开放负熵正是为了对抗热寂。
-6. **缪斯稳态是理想参照**，不是工程目标，类似卡诺热机。
-7. **隐喻不是本体，而是语言**，数热学在 v0.1.1 中已明确这一立场。
-8. **隐喻可替换性不否定对象的存在**——物理学中牛顿力学、拉格朗日力学、哈密顿力学等价但揭示不同结构；化学和物理学描述同一物质世界，化学的成立不否定物理学的成立。多个隐喻从不同层面描述同一对象，恰恰说明对象是真实存在的。数热学的真伪取决于命题的可检验性，而非隐喻的不可替代性。
+$$
+V_{\mathrm{out}}
+=
+V_{\mathrm{in}}
++
+V_{\mathrm{external}}
++
+V_{\mathrm{interaction}}
+-
+V_{\mathrm{loss}}
+$$
 
-### 对第八条回应的补充说明
+The objection is straightforward:
 
-第八条论证触及的是数热学合法性的根基。数热学的完整回应如下：
+> If every unexplained change can be placed into “external,” “interaction,” or “loss,” the equation may be an accounting identity rather than a scientific law.
 
-**数热学不声称热力学隐喻不可替代。** 相反，数热学明确承认替代隐喻的存在，并将其纳入自身的框架结构（见根文档“替代隐喻检验”章节）。数热学的本体不是热力学隐喻，而是四条可检验的核心假设：价值守恒、梯度驱动、效率上限、稳态可达。这些假设可以用热力学语言表述，也可以用化学语言、生态学语言或流体力学语言表述。**隐喻只是表述工具，假设才是理论实质。**
+### Decisive test
 
-**替代隐喻的成立不是对数热学的否定，而是对数热学核心命题的间接支持。** 如果数据化学、数据生态学各自独立地观察到了价值转化、梯度衰减、效率约束等现象，那么这些现象就不是热力学隐喻的修辞幻觉，而是数据价值生态中真实存在的模式。多个独立隐喻指向同一组模式，是模式真实性的证据。
+Each term must have an independently measurable operational definition.
 
-**但这条回应存在一个前提条件：** 数热学必须证明，它的核心假设确实独立于热力学隐喻而存在。如果剥离热力学语言后，核心假设无法被表述或无法被检验，那么第八条论证成立，数热学确实只是修辞游戏。**这个前提条件是否满足，取决于数热学能否完成从隐喻到形式化的跨越。**
+A useful value-balance model should:
+
+1. estimate terms before observing the final outcome;
+2. predict the resulting value;
+3. produce residuals;
+4. allow systematic rejection.
+
+If the model cannot do this, it should remain bookkeeping rather than a theoretical law.
+
+**Current status:** unresolved.
 
 ---
 
-## 结语
+## A4. Why Is Variance the Right Measure of Gradient Collapse?
 
-反数热学提醒我们：任何理论都需要反面。
+The candidate diagnostic is:
 
-如果数热学不能回答上述质疑，它就只是一个有趣的隐喻。如果能回答，它就有机会成为一门真正的学科。
+$$
+G_D(t)
+=
+\operatorname{Var}[\Theta_D(t)]
+$$
 
-本文档的目的不是摧毁数热学，而是为它提供一面镜子。只有愿意直视镜中缺陷的理论，才有资格被称为科学。
+The objection is that variance is only one possible measure.
 
-第八条论证的加入，使反方镜像更加完整：它不仅质疑数热学的假设是否成立，还质疑数热学的语言是否具有承载理论的资格。数热学对此的回应——将本体锚定在命题而非隐喻上——是否充分，取决于它能否在可证伪的形式化检验中通过验证。
+Other candidates include:
 
-在此之前，数热学仍然是一个开放问题，而非一个既定答案。
+- entropy of the value distribution;
+- number of actionable distinctions;
+- effective decision diversity;
+- mutual information;
+- marginal utility distributions;
+- network measures.
+
+A system could have high variance while still being operationally useless.
+
+### Decisive test
+
+Compare candidate collapse metrics against independent measures of system performance.
+
+A useful collapse metric should predict a meaningful loss of:
+
+- decision differentiation;
+- task performance;
+- resource allocation efficiency;
+- adaptive capacity.
+
+**Current status:** candidate diagnostic only.
+
+---
+
+## A5. Is Muse Homeostasis Merely Control Theory?
+
+MH currently consists of:
+
+- sensing;
+- regulation;
+- recovery;
+- regeneration.
+
+These mechanisms overlap strongly with:
+
+- control theory;
+- cybernetics;
+- biological homeostasis;
+- adaptive systems;
+- reinforcement learning.
+
+The objection is:
+
+> **What does MH add that existing theories do not already provide?**
+
+If MH only renames feedback and adaptation using thermodynamic language, its independent theoretical contribution may be weak.
+
+### Decisive test
+
+Formalize the same system using established control or adaptive-system frameworks.
+
+Then determine whether MH provides:
+
+- a new measurable variable;
+- a new constraint;
+- a new prediction;
+- a useful classification;
+- or a better engineering design.
+
+If not, MH should be treated as a conceptual synthesis rather than a new scientific principle.
+
+**Current status:** unresolved but testable.
+
+---
+
+## A6. Is Data-Thermodynamic Feedback Merely Feedback Control with New Vocabulary?
+
+The current loop is:
+
+$$
+D_t
+\rightarrow
+\Theta_t
+\rightarrow
+A_t
+\rightarrow
+V_t
+\rightarrow
+F_t
+\rightarrow
+\pi_{t+1}
+$$
+
+Feedback itself is not novel.
+
+It is foundational to control theory, cybernetics, biology, reinforcement learning, and adaptive systems.
+
+The proposed distinction is that **actionable-value change** is used as an organizing variable.
+
+### Decisive test
+
+Compare value-sensitive feedback policies against appropriate existing control and reinforcement-learning baselines.
+
+Ask whether the value-gradient formulation improves:
+
+- sample efficiency;
+- robustness;
+- recovery;
+- resource allocation;
+- interpretability;
+- transfer across tasks.
+
+**Current status:** promising framing, not yet a demonstrated contribution.
+
+---
+
+## A7. Does “Regeneration” Explain Anything Beyond Interaction?
+
+The framework says that data value can regenerate through:
+
+- feedback;
+- interaction;
+- recombination;
+- new observations;
+- model updating.
+
+The objection is that "regeneration" may merely be a descriptive label for ordinary data generation and learning.
+
+### Decisive test
+
+Specify a regeneration rate or transition model that predicts future actionable value from identifiable mechanisms.
+
+For example:
+
+$$
+\Delta V
+=
+f(\text{interaction},\text{feedback},\text{recombination},\text{new observations})
+$$
+
+The model must outperform a simple baseline based only on data volume or recency.
+
+**Current status:** conceptual.
+
+---
+
+## A8. Why Thermodynamics?
+
+This is the deepest objection.
+
+Suppose all core concepts can be reformulated using:
+
+- decision theory;
+- information theory;
+- economics;
+- control theory;
+- complex-systems theory.
+
+Then:
+
+> **Why call the framework Data Thermodynamics?**
+
+This is the **Metaphor Substitutability Test**.
+
+The thermodynamic vocabulary earns independent theoretical status only if it generates something that alternative formulations do not provide.
+
+Potential evidence would include:
+
+- transferable constraints;
+- useful bounds;
+- invariant relationships;
+- new metrics;
+- new predictions;
+- superior engineering designs.
+
+If removal of thermodynamic language causes no loss of explanatory or predictive capability, the framework may still be valuable, but "thermodynamics" would function primarily as a narrative or organizing metaphor.
+
+**Current status:** fundamental unresolved challenge.
+
+---
+
+## 4. Additional Objections
+
+### A9. Is Actionable Value Too Observer-Dependent?
+
+Because:
+
+$$
+V = V(D \mid C,T,A,R)
+$$
+
+different observers, tasks, time points, and resource constraints can assign different values to the same data.
+
+This raises a measurement problem:
+
+> Can a framework built on relational value support stable cross-system comparison?
+
+A possible response is to define temperature only relative to a declared task, observer class, and resource regime.
+
+The decisive test is whether measurements remain sufficiently stable under controlled changes in context.
+
+**Current status:** unresolved measurement problem.
+
+---
+
+### A10. Can Value Be Aggregated?
+
+If values are contextual, it may be invalid to simply write:
+
+$$
+V_{\mathrm{system}}
+=
+\sum_i V_i
+$$
+
+Some values may be:
+
+- complementary;
+- redundant;
+- substitutable;
+- synergistic;
+- mutually exclusive.
+
+Therefore aggregation requires a model of interactions.
+
+This may force Data Thermodynamics toward network or set-function representations rather than scalar addition.
+
+**Current status:** open formalization problem.
+
+---
+
+### A11. Is Irreversibility Actually Present?
+
+Thermodynamic language strongly suggests irreversibility.
+
+But data systems can often:
+
+- copy;
+- restore;
+- replay;
+- version;
+- regenerate;
+- reconstruct.
+
+Therefore information loss and value loss must be distinguished from physical irreversibility.
+
+The framework should not claim irreversibility unless an operational process has a demonstrable asymmetry or non-recoverability under stated constraints.
+
+**Current status:** open.
+
+---
+
+### A12. Does an Efficiency Upper Bound Exist?
+
+Earlier versions proposed:
+
+$$
+\eta
+\leq
+1-\frac{\Theta_{\mathrm{cold}}}{\Theta_{\mathrm{hot}}}
+$$
+
+The objection is that this resembles the Carnot bound without a derivation connecting data temperature to physical temperature or an equivalent thermodynamic structure.
+
+Therefore no Carnot-like bound should be treated as a core law unless derived from explicit assumptions.
+
+### Decisive test
+
+Define:
+
+1. input resource;
+2. output work;
+3. value transfer;
+4. system boundaries;
+5. reversible limit;
+6. temperature-like state variables.
+
+Then derive the bound independently.
+
+If no derivation exists, retain only the general claim that real data-processing systems may have efficiency constraints.
+
+**Current status:** speculative.
+
+---
+
+## A13. Is “Dissipation” More Than a Metaphor for Value Loss?
+
+The revised core uses **dissipation** to describe cases in which actionable
+value declines, disperses, becomes less recoverable, or loses useful
+differentiation.
+
+The objection is that this may simply rename familiar phenomena:
+
+- depreciation;
+- information loss;
+- declining marginal utility;
+- diffusion;
+- redundancy;
+- opportunity-cost changes.
+
+If so, the thermodynamic term contributes narrative structure but no
+independent explanatory content.
+
+### Decisive test
+
+Specify an operational definition of dissipation and test whether it predicts
+future value loss, recoverability, or system performance beyond existing
+metrics.
+
+A useful dissipation construct should ideally:
+
+1. be measurable before the final outcome;
+2. distinguish loss from redistribution and regeneration;
+3. support prediction;
+4. identify an intervention that ordinary value metrics would not identify as
+   clearly.
+
+If it cannot satisfy these conditions, “dissipation” should remain a metaphor
+rather than a core theoretical variable.
+
+**Current status:** open.
+
+---
+
+## 5. Strong Counterexamples the Framework Must Survive
+
+### Copying
+
+One dataset can be copied to many users without the original copy becoming unusable.
+
+**Implication:** data value cannot be modeled as ordinary rival physical energy.
+
+### Network Effects
+
+Use can increase future value by attracting users, contributors, or attention.
+
+**Implication:** consumption and regeneration can occur simultaneously.
+
+### Lossy Processing
+
+Cleaning or compression can remove useful anomalies.
+
+**Implication:** processing has no fixed thermodynamic direction.
+
+### Context Switching
+
+The same data can move from low to high value when a new task appears.
+
+**Implication:** temperature cannot be intrinsic to the data alone.
+
+### Universal Availability
+
+Information can lose scarcity while remaining objectively informative.
+
+**Implication:** value, information, and scarcity must not be conflated.
+
+### Feedback Loops
+
+Actions generate observations that alter future actions.
+
+**Implication:** data systems are branching dynamical systems rather than one-way pipelines.
+
+---
+
+## 6. What Would Force the Theory to Change?
+
+The following findings would count as serious failures.
+
+### Failure 1
+
+No operationalization of $\Theta_D$ consistently outperforms or complements existing value measures.
+
+**Required response:** weaken or remove Data Temperature.
+
+### Failure 2
+
+Measured value gradients fail to predict any meaningful resource allocation or action.
+
+**Required response:** weaken C3.
+
+### Failure 3
+
+Value-balance models cannot produce independently testable predictions.
+
+**Required response:** retain value accounting only as bookkeeping.
+
+### Failure 4
+
+Gradient-collapse metrics fail to predict independent system degradation.
+
+**Required response:** abandon the current collapse metric or the collapse hypothesis.
+
+### Failure 5
+
+MH provides no measurable advantage over existing adaptive/control frameworks.
+
+**Required response:** classify MH as a synthesis or design language rather than a distinct theory.
+
+### Failure 6
+
+Thermodynamic framing produces no additional constraints, predictions, or engineering utility.
+
+**Required response:** acknowledge that Data Thermodynamics is primarily a metaphorical framework.
+
+---
+
+## 7. Current Defense of the Framework
+
+The framework does not need to win every objection.
+
+Its current defense is deliberately modest:
+
+1. Context-dependent value is a legitimate empirical object of study.
+2. Existing data-valuation methods demonstrate that quantitative value attribution is possible in at least some settings.
+3. Dynamic value changes, feedback, and resource allocation are naturally coupled in many data systems.
+4. Thermodynamic concepts provide a potentially useful language for gradients, dissipation, nonequilibrium behavior, and recovery.
+5. MH and DTF may become useful if they generate measurable system-level predictions beyond existing terminology.
+
+This is a research position, not a claim of established scientific validity.
+
+---
+
+## 8. Anti-Framework as a Research Protocol
+
+For each future core proposition, the anti-framework should ask:
+
+1. What is the strongest counterexample?
+2. What existing theory already explains the phenomenon?
+3. What quantity is actually measurable?
+4. What prediction follows from the proposition?
+5. What baseline should it beat?
+6. What result would falsify it?
+7. What revision would follow from failure?
+
+This procedure should be applied before a new concept is promoted into the core.
+
+---
+
+## 9. Relationship to the Topics
+
+The Topic documents are exploratory laboratories rather than evidence for the core.
+
+In particular:
+
+- `ai.md` tests MH and DTF in adaptive AI systems;
+- `biology.md` compares MH with biological homeostasis;
+- `mindsea.md` explores speculative cognitive extensions such as Forgetting Elasticity and Data Vacuum;
+- `social-phenomena.md` explores information propagation and collective value dynamics;
+- `cosmology.md` and `mbti-thermal-profiles.md` remain highly speculative analogical domains.
+
+No Topic result should be treated as empirical confirmation of the Core without independent validation.
+
+---
+
+## 10. Conclusion
+
+The strongest version of Data Thermodynamics is not the claim that data literally behaves like heat.
+
+It is the narrower proposition that:
+
+> **Actionable value in data systems may exhibit measurable gradients, transformations, dissipation, regeneration, and feedback-dependent maintenance.**
+
+The anti-framework exists to determine whether this proposition survives comparison with established theories and empirical evidence.
+
+If it does, the thermodynamic vocabulary may prove to be more than metaphor.
+
+If it does not, the project should retain whatever useful theory remains and abandon the unsupported parts.
+
+That is not failure of the framework.
+
+It is the intended operation of the framework.
+
+---
+
+## References
+
+The anti-framework relies on the same scientific literature as the core document, while treating those sources as background rather than validation.
+
+See `00-INITIAL.md` for the current starting bibliography.

@@ -6,6 +6,11 @@
 
 ---
 
+## LifeefiL
+LifeefiL is a project guided by the concept of Life Lab, focusing on the research and application of life data. It explores how data recording, organization, understanding, and reuse can continuously unlock the value of life data.
+
+LifeefiL serves as the overarching brand and conceptual framework for this project. Data Thermodynamics, the theroy in this repository, is an independent product within this framework.
+
 ## 关于本项目
 
 **数热学（Data Thermodynamics）** 是一套研究数据系统中 **可行动价值（actionable value）** 如何产生、流动、转化、耗散与再生的跨学科理论框架。
